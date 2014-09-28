@@ -1,0 +1,83 @@
+Space Corp. Meeting 2014-09-28
+
+Augmented reality?
+	Probably too ambitious
+	Difficult to meaningfully incorporate input
+Progression from mundane to magical?
+Daydreaming to move you between environments?
+	Could be actually magical or just daydreaming
+	Story
+		Affecting an alternate reality?
+		Or just actually daydreaming?
+	WarioWare style minigames
+		Built off of a core mechanic
+	Platforming?
+	Top-down?
+	Perhaps top-down in the overworld and side-scrolling in the minigames
+	Dialogue
+	Open-ish world
+
+Story
+	Setting: high school
+	What kinds of daydreams?
+		Food fight
+		Superhero
+		Saving the day
+		Winning over your crush
+		Revenge upon an evil teacher
+		Free running
+		Careers
+		College
+
+Minigames
+	Spanish class: attempting to seduce someone with salsa dance
+		DDR-esque
+	Programming class: I CAN SEE THE CODE and change physics to solve puzzle
+		Done on a computer monitora
+	English class: Great Gatsby
+		Dating sim?
+		Text adventure
+		BS-sing your way through the story
+
+Tasks
+	Art
+		Main menu
+		Top-down overworld
+			TONS OF TILES
+		Overworld UI
+			Press to use
+			Dialogue window
+			Dialogue choice window
+		Spanish minigame
+			DDR arrows
+			Receiving area
+			Dancing sprites
+		Programming minigame
+			Neo
+			Code-platforms
+		English minigame
+			Background
+			Sprites
+			Expression squares
+
+	Programming
+		Main menu
+		Top-down overworld
+		Spanish minigame
+			DDR
+		Programming minigame
+			Physics system
+		English minigame
+			Point-and-click
+		Dialogue system
+
+	Sound
+		Overworld school music
+		Salsa music
+		Sci-fi music
+		Mystery music
+		Sound effects
+
+	Story
+		ALL the dialogue
+		Murder mystery
