@@ -1,0 +1,101 @@
+
+
+Murder Mystery Script
+
+
+Scene: Mr.Crawford is on the ground face down with a knife in his back. The room is an old English style sitting room complete with mounted animal heads and a roaring fireplace.
+it is approximately 6PM and the detective(protagonist) has gathered the three main suspects: Mrs. Crawford, the deceased wife; Samuel, his butler; and Mr. Crawford's son Alistair
+Crawford.
+
+
+Protagonist: I assume you all know exactly why I have gathered you here today
+protagonist: There is a dead man and I knew each of you three were in this house today
+protagonist: you three and only you three had access to this room and all had good motive to kill Mr. Crawford
+Protagonist: Lets start with you 
+(CHOICE)  1. Mrs. Crawford  2. Samuel   3. Alistair Crawford
+
+(CHOICE 1) Mrs. Crawford
+
+Protagonist: Yes you Mrs. Crawford...when conversing with the help I had found that you and your late husband no longer shared a room
+Protagonist: in fact you decided to move into a bedroom on the other side of the mansion a few years ago.
+Protagonist: Was there trouble in paradise? 
+Samuel: (snickers)
+Protagonist: Samuel! Do you have something to say on this matter?
+Samuel: You didn't hear it from me but the man was fruitier than the banana daiquiri's me has me make for him and his gentleman friends. 
+Samuel: Several years ago Mr. Crawford decided that he had preferred the company of other men than the women he choose to be his wife.
+Mrs. Crawford: YOU SWORE YOU WOULD NEVER TELL!!!
+Samuel: That promise was to Mr.Crawford...not to you.
+Mrs. Crawford: Its true...but I loved my husband and he loved me
+Samuel: He loved everyone in his own way.
+Mrs.Crawford: its true that if his secret were to be exposed it would be the social death of me, but that isn't enough reason to kill my husband
+Protagonist: I will be the judge of that
+Protagonist: now I will hear from (RETURN TO CHOICE)
+
+(Choice 2) Samuel
+
+Protagonist: You Samuel...the faithful butler spending many long hours by Mr.Crawford's side
+Samuel: Knowing that man made me a better person
+Alistair: more like a better foot rest
+Protagonist: what?
+Alistair: Everyone knew that my father enjoyed embarrassing Samuel in every way he could.
+AListari: most nights after Samuel made daddy's tea he would ask Samuel to get down on his hands and knees and use him as a foot rest.
+Samuel: The demands of the jobs are ever changing.
+AListair: I've talked to the help. you bad mouthed my father at every chance you could and would jest about poisoning his tea
+Samuel: that was merely dark humour shared among friends. It was not a plan and as you can see if I was planning on poising him it clearly did not work.
+Protagonist: I can see how you would have reason to kill him...but I'm not sure I'm convinced
+Protagonist: I should hear from (RETURN TO CHOICE)
+
+
+(CHOICE 3) Alistair
+
+
+Protagonist: Alistair...the one and only son what motive could you possibly have for killing your father
+Mrs. Crawford: Money. the snivelling little shit was always after my husband for money
+AListair: Now that is not true...I loved father
+Mrs. Crawford: only when he bought things for you and I know you've read his will...boy never did have much respect for privacy
+Mrs. Crawford: you knew that he left you a sizeable amount of money and I know you know.
+Alistair: Mother?! what are you accusing me of?
+Mrs. Crawford: give up the act.... no one's buying it
+AListair: Well what if I did know that most of the family fortune would go to me in case of his death.
+Alistair: He would buy me most anything I needed anyway...why would I kill him to get what I can already get.
+Mrs. Crawford: Because you knew that he intended to change his will...
+Mrs. Crawford: in old age my husband had become charitable and you knew that he had planned to donate his fortune to the less fortunate
+Protagonist: interesting....interesting....I think I need to hear more from (RETURN TO CHOICE)
+
+
+(once all three have been heard from)
+Protagonist: I think I've heard enough....the killer is (CHOICE)
+(CHOICE) 1. Mrs. Crawford   2. Samuel   3. AListari
+
+(CHOICE 1) Mrs. Crawford
+
+Protagonist: The murderer is you Mrs. Crawford
+Mrs. Crawford: Its true... I couldn't live with the shame of being married to a confirmed bachelor
+Mrs. Crawford: If my friends found out... I would be ruined.
+Mrs. Crawford: I thought that if I got him out of the way I could go back to having a normal life
+Mrs. Crawford: I had planned to poison his tea and blame Samuel but the man would not die.
+Mrs. Crawford: I became desperate and couldn't take it any more...so I killed my husband
+
+(CHOICE 2) Samuel
+
+
+Protagonist: The murderer is you Samuel
+Samuel: Well the old bastard deserved it.
+Samuel: using me as a footrest...How dare he.
+Samuel: I knew the man's boy had a mean streak so I figured I could stab him to death and blame the son
+Samuel: Clearly I was wrong, but if I could still blame the boy I would like to.
+Samuel: Oh well... maybe I can serve tea in prison.
+
+(CHOICE 3) AListair
+
+Protagonist: The murderer is you Alistair
+Alistair: how dare you accuse me of that!
+Protagonist: because you killed him
+Alistair: You can't prove that I came in here and stabbed daddy.
+AListair: no one was around, and I knew that I could blame mother
+Alistair: oh...can I take that back
+Mrs. Crawford: never was a clever boy
+Alistair: well you got me. I killed him, but the money was mine.
+AListair: I deserved it, not some starving street urchin, what have the poor every done for Father?
+Alistair: Giving his money to those that don't deserve it is the real crime. Arrest him for that
+Protagonist: instead I'll have to settle for arresting you for the actual crime of murder
