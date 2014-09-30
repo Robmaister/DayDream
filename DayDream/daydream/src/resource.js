@@ -1,7 +1,9 @@
 var res = {
-    HelloWorld_png : "res/HelloWorld.png",
-    CloseNormal_png : "res/CloseNormal.png",
-    CloseSelected_png : "res/CloseSelected.png"
+     proto_a : "res/a_key_proto.png",
+     proto_s : "res/s_key_proto.png",
+     proto_w : "res/w_key_proto.png",
+     proto_d : "res/d_key_proto.png",
+     proto_bg: "res/bg_proto.png",
 };
 
 var g_resources = [];
