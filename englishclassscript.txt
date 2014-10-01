@@ -7,19 +7,30 @@ Scene: Mr.Crawford is on the ground face down with a knife in his back. The room
 it is approximately 6PM and the detective(protagonist) has gathered the three main suspects: Mrs. Crawford, the deceased's wife; Samuel Edmonton, his butler; and Mr. Crawford's son Alistair
 Crawford.
 
-protagonist: A man by the name of Mr. James Crawford was murdered in this very room earlier today.
-Protagonist: The only people, other than the deceased himself, that have access to this room are
-Protagonist: Mrs. Eleanor Crawford, his wife,
-Protagonist: Alistair Crawford, their one and only son,
-Protagonist: and Samuel Edmonton, Mr. Crawford's personal butler. 
-protagonist: Each of you have your own reasons to want the man dead and I will lead the investigation.
-Protagonist: Lets start with you 
+
+Protagonist: Today! In this very house, in this very room a most heinous crime was committed.
+Protagonist: MURDER!
+Protagonist: Poor James Crawford never asked for this knife in his back.
+Protagonist: But one of you gave it to him anyway. Who could it be?
+Protagonist: Could it be his lovely wife of many years. The one who pledged to stay by his side through sickness and in health?
+Protagonist: Or, might it be his son. Little Alistair Crawford. The only child given everything he could ever want and more.
+Protagonist: Ah, but there is one other who could have committed this dastardly deed.
+Protagonist: The butler Samuel Edmonton. A man who was supposedly loyal to James for many years.
+Protagonist: Let the investigation begin!
+Protagonist: I shall start with you
+#protagonist: A man by the name of Mr. James Crawford was murdered in this very room earlier today.
+#Protagonist: The only people, other than the deceased himself, that have access to this room are
+#Protagonist: Mrs. Eleanor Crawford, his wife,
+#Protagonist: Alistair Crawford, their one and only son,
+#Protagonist: and Samuel Edmonton, Mr. Crawford's personal butler. 
+#protagonist: Each of you have your own reasons to want the man dead and I will lead the investigation.
+#Protagonist: Lets start with you 
 (CHOICE)  1. Mrs. Crawford  2. Samuel  Edmonton 3. Alistair Crawford
 
 
 (CHOICE 1) Mrs. Crawford
 
-Protagonist: Yes you Mrs. Crawford...when I talked with the help, I found out that you and your late husband no longer shared a room
+Protagonist: Yes you Mrs. Crawford...when I talked with the help, I found out that you and your late husband no longer shared a room.
 Protagonist: In fact you decided to move into a bedroom on the other side of the mansion a few years ago.
 Protagonist: What reason could there be for that?
 Samuel: (snickers)
@@ -48,8 +59,8 @@ Alistair: More like a better foot rest.
 Protagonist: What?
 Alistair: Everyone knew that my father enjoyed embarrassing Samuel in every way that he could.
 AListair: Most nights after Samuel made daddy's tea, daddy would ask Samuel to get down on his hands and knees and become his footrest.
-Samuel: The demands of the jobs are ever changing.
-Alistair: I've talked to the help. You badmouthed daddy at every chance you could.
+Samuel: The demands of the job are ever changing.
+Alistair: I've talked to the kitchen staff. You badmouthed daddy at every chance you could.
 Alistair: The other servants said that you had plans to poison his tea.
 Samuel: That was merely dark humour shared among friends. It was not a plan and as you can see, if I had poisoned him, it clearly did not work.
 Protagonist: I can see how you would have reason to kill him...but I'm not sure I'm convinced.
@@ -102,7 +113,7 @@ Protagonist: Not today ma'am.
 Protagonist: The murderer is you Samuel!
 Samuel: Well the old bastard deserved it
 Samuel: Using me as a footrest...How dare he.
-Samuel: I knew the man's boy had a mean streak so I figured I could stab him to death and blame the son.
+Samuel: I knew Alistair was as means as he was dumb, so I figured I could stab James to death and blame the boy.
 Samuel: Clearly I was wrong, but if I could still blame the boy I would like to.
 Samuel: Oh well... maybe I can serve tea in prison.
 Protagonist: There is no tea in prison.
@@ -124,4 +135,4 @@ Alistair: Giving his money to those who don't deserve it is the real crime. Arre
 Protagonist: Arrest the dead man?
 Alistair: Yes.
 Protagonist: I'm afraid I can't do that.
-Protagonist: Then I will settle for arresting you for murder.
+Protagonist: But I will be able to carry out justice on a murderer today. Come with me Alistair.
