@@ -1,18 +1,18 @@
 General Script
 
-Sven: Another boring day at school
-Sven: Why can't anything interesting ever happen...like a ninja fight, or a zombie invasion
+Conrad: Another boring day at school
+Conrad: Why can't anything interesting ever happen...like a ninja fight, or a zombie invasion
 (Bell rings)
-Sven: I guess I need to go to class
+Conrad: I guess I need to go to class
 
 
 UPON ENTERING ENGLISH CLASS
 
 Teacher: Today we will be discussing the works of Agatha Christie.
 Teacher: One of the greatest mystery writers who ever lived. 
-Sven starts day dreaming
-Sven: I could be a detective. I'd be good at solving crimes.
-Sven: I'd always figure out who did it.
+Conrad starts day dreaming
+Conrad: I could be a detective. I'd be good at solving crimes.
+Conrad: I'd always figure out who did it.
 
 START DAYDREAM MINIGAME
 
@@ -20,7 +20,7 @@ AFTER MINIGAME
 
 bell rings
 Teacher: That will be all for today class.
-Sven: I guess I am good at being a detective.
+Conrad: I guess I am good at being a detective.
 
 
 UPON ENTERING CS CLASS
@@ -28,9 +28,9 @@ UPON ENTERING CS CLASS
 Teacher: Today we will be discussing class variables.
 Teacher: A class variable is a special variable that is defined inside of a class.
 Teacher: This variable is unique to each instance of the class and affects the functionality of the class.
-Sven starts daydreaming
-Sven: If I change the variables I change what happens.
-Sven: What could I do that in real life. How cool would it be to change the variables of reality.
+Conrad starts daydreaming
+Conrad: If I change the variables I change what happens.
+Conrad: What could I do that in real life. How cool would it be to change the variables of reality.
 
 START DAYDREAMING MINIGAME
 
@@ -38,25 +38,25 @@ AFTER MINIGAME
 
 bell rings
 Teacher: Remember... your project is due on Thursday...the instructions are on my website.
-Sven: I'll just press the button and change that Thursday to never.
+Conrad: I'll just press the button and change that Thursday to never.
 
 
 
 UPON ENTERING SPANISH CLASS
 
 Teacher: Okay class. lets start with some simple questions
-Sven:(thinks)(Please don't call on me)
-Teacher: Sven.
-Sven:(damn)
+Conrad:(thinks)(Please don't call on me)
+Teacher: Conrad.
+Conrad:(damn)
 Teacher: Donde esta la biblioteca?
-Sven:....
-Sven:si?
+Conrad:....
+Conrad:si?
 Teacher:not quite.
-Sven begins to daydream
-Sven:If only I could speak Spanish I could impress her.
-Sven:She has such pretty eyes.
-Sven:Maybe if I knew more about Spanish things.
-Sven:I should learn a Spanish dance.
+Conrad begins to daydream
+Conrad:If only I could speak Spanish I could impress her.
+Conrad:She has such pretty eyes.
+Conrad:Maybe if I knew more about Spanish things.
+Conrad:I should learn a Spanish dance.
 
 BEGIN DAY DREAM MINIGAME
 
@@ -66,13 +66,13 @@ AFTER DAY DREAM MINIGAME
 
 (Bell rings)
 Teacher: remember class...test tomorrow. I hope everyone comes in prepared.
-Sven:(double damn)
-Sven:(well...at least I can dance now)
+Conrad:(double damn)
+Conrad:(well...at least I can dance now)
 
 
 
 AFTER ALL THE MINI-GAMES
 
 (final bell rings)
-Sven: Today wasn't as bad as I thought it would be
-Sven: School can be fun when you pay attention.
+Conrad: Today wasn't as bad as I thought it would be
+Conrad: School can be fun when you pay attention.
