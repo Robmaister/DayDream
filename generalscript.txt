@@ -44,7 +44,7 @@ Conrad: I'll just press the button and change that Thursday to never.
 
 UPON ENTERING SPANISH CLASS
 
-Teacher: Okay class. lets start with some simple questions
+Mrs.Sanchez(the spanish teacher): Okay class. lets start with some simple questions
 Conrad:(thinks)(Please don't call on me)
 Teacher: Conrad.
 Conrad:(damn)
@@ -60,7 +60,13 @@ Conrad:I should learn a Spanish dance.
 
 BEGIN DAY DREAM MINIGAME
 
-
+Mrs.Sanchez: Conrad you are a nice boy...but what I truly desire is a man who can dance.
+Conrad: I'll have you know that I am the best Salsa dancer in the world.
+Mrs.Sanchez: Then dance with me, if you can prove that you are the best Salsa dancer in the world I will be yours.
+(Begin the dancing)
+(After the dancing)
+Mrs.Sanchez: Conrad you truly are the best Salsa dancer in the world.
+Mrs.Sanchez: We will dance forever.
 AFTER DAY DREAM MINIGAME
 
 
