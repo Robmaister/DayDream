@@ -1,15 +1,15 @@
 General Script
 
 Conrad: Another boring day at school
-Conrad: Why can't anything interesting ever happen...like a ninja fight, or a zombie invasion
+Conrad: Why can't anything interesting ever happen...like a ninja fight, or an alien invasion.
 (Bell rings)
 Conrad: I guess I need to go to class
 
 
 UPON ENTERING ENGLISH CLASS
 
-Teacher: Today we will be discussing the works of Agatha Christie.
-Teacher: One of the greatest mystery writers who ever lived. 
+Teacher: Today we will be discussing the works of Agatha Christie,
+Teacher: one of the greatest mystery writers who ever lived. 
 Conrad starts day dreaming
 Conrad: I could be a detective. I'd be good at solving crimes.
 Conrad: I'd always figure out who did it.
@@ -17,63 +17,65 @@ Conrad: I'd always figure out who did it.
 START DAYDREAM MINIGAME
 
 AFTER MINIGAME
-
+Teacher:Conrad!
+Conrad: Yes.
+Teacher: Are you even paying attention?
+Conrad: Of course.
+Teacher: Then maybe you can tell us who you think the murderer is.
+Conrad: it was ########
+(can be either "the son", "the wife", or "the butler" depending on the choice from the mini-game)
 bell rings
-Teacher: That will be all for today class.
-Conrad: I guess I am good at being a detective.
+Teacher: Remember, the last two chapters are homework tonight. We will discuss the ending in class tomorrow.
+Conrad:(I don't need to read to figure out who the murderer is, I've already figured it out)
 
 
-UPON ENTERING CS CLASS
-
-Teacher: Today we will be discussing class variables.
-Teacher: A class variable is a special variable that is defined inside of a class.
-Teacher: This variable is unique to each instance of the class and affects the functionality of the class.
-Conrad starts daydreaming
-Conrad: If I change the variables I change what happens.
-Conrad: What could I do that in real life. How cool would it be to change the variables of reality.
-
-START DAYDREAMING MINIGAME
-
-AFTER MINIGAME
-
-bell rings
-Teacher: Remember... your project is due on Thursday...the instructions are on my website.
-Conrad: I'll just press the button and change that Thursday to never.
+#UPON ENTERING CS CLASS
+#
+#Teacher: Today we will be discussing class variables.
+#Teacher: A class variable is a special variable that is defined inside of a class.
+#Teacher: This variable is unique to each instance of the class and affects the functionality of the class.
+#Conrad starts daydreaming
+#Conrad: If I change the variables I change what happens.
+#Conrad: What could I do that in real life. How cool would it be to change the variables of reality.
+#
+#START DAYDREAMING MINIGAME
+#
+#AFTER MINIGAME
+#
+#bell rings
+#Teacher: Remember... your project is due on Thursday...the instructions are on my website.
+#Conrad: I'll just press the button and change that Thursday to never.
 
 
 
 UPON ENTERING SPANISH CLASS
 
-Mrs.Sanchez(the spanish teacher): Okay class. lets start with some simple questions
-Conrad:(thinks)(Please don't call on me)
+Mrs.Sanchez(the Spanish teacher): Okay class. lets start with some simple questions
+Conrad:(Please don't call on me)
 Teacher: Conrad.
-Conrad:(damn)
-Teacher: Donde esta la biblioteca?
-Conrad:....
-Conrad:si?
+Conrad:...(damn)
+Teacher: Dónde está la biblioteca?
+Conrad:....ummmmmmmm.
+Conrad:sí?
 Teacher:not quite.
 Conrad begins to daydream
-Conrad:If only I could speak Spanish I could impress her.
 Conrad:She has such pretty eyes.
-Conrad:Maybe if I knew more about Spanish things.
-Conrad:I should learn a Spanish dance.
+Conrad:I wish I could do something to make her like me.
+Conrad:Maybe if I knew how to Salsa dance I could impress her.
 
 BEGIN DAY DREAM MINIGAME
 
 Mrs.Sanchez: Conrad you are a nice boy...but what I truly desire is a man who can dance.
 Conrad: I'll have you know that I am the best Salsa dancer in the world.
-Mrs.Sanchez: Then dance with me, if you can prove that you are the best Salsa dancer in the world I will be yours.
+Mrs.Sanchez: Prove it to me. Let us dance.
 (Begin the dancing)
 (After the dancing)
 Mrs.Sanchez: Conrad you truly are the best Salsa dancer in the world.
-Mrs.Sanchez: We will dance forever.
 AFTER DAY DREAM MINIGAME
-
-
 (Bell rings)
-Teacher: remember class...test tomorrow. I hope everyone comes in prepared.
-Conrad:(double damn)
-Conrad:(well...at least I can dance now)
+Mrs.Sanchez: Remember class...next Thursday your cultural presentations are due.
+Mrs.Sanchez: Anything is acceptable. Cook something, review a Spanish movie, just pass it by me first.
+Conrad:(Maybe I actually should learn to dance)
 
 
 
