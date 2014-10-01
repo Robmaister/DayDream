@@ -9,13 +9,15 @@ Crawford.
 
 [give Samuel a surname]
 
-protagonist: There is a dead man and I knew each of you three were in this house today
-Protagonist: The only people, other than the deceased himself, have access to this room
-protagonist: Each of you have your own reasons to want the man dead and I will lead the investigation
+protagonist: A man by the name of Mr. James Crawford was murdered in this very room earlier today.
+Protagonist: The only people, other than the deceased himself, that have access to this room are
+Protagonist: Mrs. Eleanor Crawford, his wife,
+Protagonist: Alistair Crawford, their one and only son,
+Protagonist: and Samuel Edmonton, Mr. Crawford's personal butler. 
+protagonist: Each of you have your own reasons to want the man dead and I will lead the investigation.
 Protagonist: Lets start with you 
 (CHOICE)  1. Mrs. Crawford  2. Samuel  Edmonton 3. Alistair Crawford
 
-[remove "you three", don't tell them what they know]
 
 (CHOICE 1) Mrs. Crawford
 
@@ -24,13 +26,18 @@ Protagonist: In fact you decided to move into a bedroom on the other side of the
 Protagonist: What reason could there be for that?
 Samuel: (snickers)
 Protagonist: Samuel! Do you have something to say on this matter?
-Samuel: If I may be frank, the man was fruitier than a banana daiquiri. 
+Samuel: If I may be frank, the man was fruitier than a banana daiquiri.
+Alistair:You're not Frank...your name is Samuel...I think.
+Samuel:...
 Samuel: Several years ago Mr. Crawford decided that he...preferred the company of other men.
 Mrs. Crawford: YOU SWORE YOU WOULD NEVER TELL!!!
 Samuel: That promise was to Mr.Crawford...not to you.
 Mrs. Crawford: Its true...but I loved my husband and he loved me.
 Samuel: He loved everyone in his own way.
-Mrs.Crawford: It's true. If his secret were to be exposed it would be the social death of me, but that isn't enough of a reason to kill my husband.
+Mrs.Crawford: It's true. If his secret were to be exposed it would be the social death of me. The other women at the garden club would gossip.
+Mrs. Crawford: It would be terrible. 
+Mrs. Crawford: I'd be the laughing stock of the country club. they'd make me team up with Glados for bridge and she's so old she can't even see the cards.
+Mrs. Crawford: But that isn't enough of a reason to kill my husband.
 Protagonist: I will be the judge of that.
 Protagonist: Now, I think I will hear from (RETURN TO CHOICE)
 
@@ -46,7 +53,7 @@ AListari: Most nights after Samuel made daddy's tea, daddy would ask Samuel to g
 Samuel: The demands of the jobs are ever changing.
 Alistair: I've talked to the help. You bad mouthed daddy at every chance you could.
 Alistair: The other servants said that you had plans to poison his tea.
-Samuel: That was merely dark humour shared among friends. It was not a plan and as you can see, if I was planning on poising him, it clearly did not work.
+Samuel: That was merely dark humour shared among friends. It was not a plan and as you can see, if I was planning on poisoning him, it clearly did not work.
 Protagonist: I can see how you would have reason to kill him...but I'm not sure I'm convinced.
 Protagonist: I should hear from (RETURN TO CHOICE)
 
@@ -56,12 +63,15 @@ Protagonist: I should hear from (RETURN TO CHOICE)
 
 Protagonist: Alistair...Mr. Crawford's one and only son. What motive could you possibly have for killing your father.
 Alistair: ummm....none?
-Mrs. Crawford: Money. The snivelling little shit was always after my husband for money
+Mrs. Crawford: Money. The snivelling little shit was always after my husband for money.
 Alistair: I resent that. I keep very clean and I loved daddy.
-Mrs. Crawford: Only when he bought things for you. I know you've read his will...boy never did have much respect for privacy.
+Mrs. Crawford: Only when he bought things for you, and he was always buying things for you.
+Mrs. Crawford: I know you've read his will...boy never did have much respect for privacy.
 Mrs. Crawford: You knew that he left you a sizeable amount of money.
 Alistair: Mother!? Are you trying to accuse me of something?
-Mrs. Crawford: I'm accusing you of murdering your father you imbecile. 
+Mrs. Crawford: I'm accusing you of murdering your father you imbecile.
+Mrs. Crawford: Why couldn't you be smart like Mabel's boy. He's a professor at Oxford.
+Mrs. Crawford: The only notable thing you've ever actually accomplished was murdering your father.
 Alistair: Why would I kill father. He was about to change his will to leave me nothing.
 Mrs.Crawford: Samuel did you know that.
 Samuel: I did not.
@@ -71,7 +81,7 @@ Protagonist: interesting....interesting....I think I need to hear more from (RET
 
 (once all three have been heard from)
 Protagonist: I think I've heard enough....the killer is (CHOICE)
-(CHOICE) 1. Mrs. Crawford   2. Samuel   3. AListari
+(CHOICE) 1. Mrs. Crawford   2. Samuel   3. AListair
 
 (CHOICE 1) Mrs. Crawford
 
@@ -81,8 +91,12 @@ Mrs. Crawford: If my friends found out... I would be ruined.
 Mrs. Crawford: I thought that if I got him out of the way I could go back to having a normal life.
 Mrs. Crawford: I had planned to poison his tea and blame Samuel but the man would not die.
 Mrs. Crawford: I became desperate and couldn't take it any more...so I killed my husband.
+Mrs. Crawford: And the funeral would have been a lavish event.
+Mrs. Crawford: I can just see myself in a new black dress I'd be the talk of the town for months.
+Mrs. Crawford: It would be perfect.
 Mrs. Crawford: Surely there must be some mercy in your heart for an old woman who just wanted a normal life?
 Protagonist: Not today ma'am. 
+Alistair: Wait...Who's Shirley?
 
 (CHOICE 2) Samuel
 
@@ -100,12 +114,13 @@ Protagonist: The murderer is you Alistair!
 Alistair: How dare you accuse me of that!
 Protagonist: Because you killed him.
 Alistair: You can't prove that I came in here and stabbed daddy.
+Alistair: No one say me come in here today and you won't find my fingerprints because I wore gloves.
 AListair: No one was around, and I knew that I could blame mother.
 Alistair: Oh...can I take that back.
 Mrs. Crawford: Never was a clever boy.
 Alistair: Well you got me. I killed him, but the money should be mine.
-AListair: I deserve it, not some starving street urchin, what have the poor every done for daddy?
-Alistair: Giving his money to those that don't deserve it is the real crime. Arrest him for that.
+Alistair: I deserve it, not some starving street urchin. What have the poor every done for daddy?
+Alistair: Giving his money to those who don't deserve it is the real crime. Arrest him for that.
 Protagonist: Arrest the dead man?
 Alistair: Yes.
 Protagonist: I'm afraid I can't do that.
