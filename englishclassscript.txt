@@ -19,7 +19,7 @@ Protagonist: Lets start with you
 
 (CHOICE 1) Mrs. Crawford
 
-Protagonist: Yes you Mrs. Crawford...when I talked with the help, I found out that you and your late husband no longer share a room
+Protagonist: Yes you Mrs. Crawford...when I talked with the help, I found out that you and your late husband no longer shared a room
 Protagonist: In fact you decided to move into a bedroom on the other side of the mansion a few years ago.
 Protagonist: What reason could there be for that?
 Samuel: (snickers)
@@ -30,11 +30,11 @@ Samuel:...
 Samuel: Several years ago Mr. Crawford decided that he...preferred the company of other men.
 Mrs. Crawford: YOU SWORE YOU WOULD NEVER TELL!!!
 Samuel: That promise was to Mr.Crawford...not to you.
-Mrs. Crawford: Its true...but I loved my husband and he loved me.
+Mrs. Crawford: It's true...but I loved my husband and he loved me.
 Samuel: He loved everyone in his own way.
 Mrs.Crawford: It's true. If his secret were to be exposed it would be the social death of me. The other women at the garden club would gossip.
 Mrs. Crawford: It would be terrible. 
-Mrs. Crawford: I'd be the laughing stock of the country club. They would make me team up with Glados for bridge and she's so old she can't even see the cards.
+Mrs. Crawford: I'd be the laughing stock of the country club. They would make me team up with Gladys for bridge and she's so old she can't even see the cards.
 Mrs. Crawford: But that isn't enough of a reason to kill my husband.
 Protagonist: I will be the judge of that.
 Protagonist: Now, I think I will hear from (RETURN TO CHOICE)
@@ -49,9 +49,9 @@ Protagonist: What?
 Alistair: Everyone knew that my father enjoyed embarrassing Samuel in every way that he could.
 AListair: Most nights after Samuel made daddy's tea, daddy would ask Samuel to get down on his hands and knees and become his footrest.
 Samuel: The demands of the jobs are ever changing.
-Alistair: I've talked to the help. You bad mouthed daddy at every chance you could.
+Alistair: I've talked to the help. You badmouthed daddy at every chance you could.
 Alistair: The other servants said that you had plans to poison his tea.
-Samuel: That was merely dark humour shared among friends. It was not a plan and as you can see, if I was planning on poisoning him, it clearly did not work.
+Samuel: That was merely dark humour shared among friends. It was not a plan and as you can see, if I had poisoned him, it clearly did not work.
 Protagonist: I can see how you would have reason to kill him...but I'm not sure I'm convinced.
 Protagonist: I should hear from (RETURN TO CHOICE)
 
@@ -71,7 +71,8 @@ Mrs. Crawford: I'm accusing you of murdering your father you imbecile.
 Mrs. Crawford: Why couldn't you be smart like Mabel's boy. He's a professor at Oxford.
 Mrs. Crawford: The only notable thing you've ever actually accomplished was murdering your father.
 Alistair: Why would I kill father? He was about to change his will to leave me nothing.
-Mrs.Crawford: Samuel did you know that.
+Alistair: He wanted to donate most of his fortune to the poor. Who does that?
+Mrs.Crawford: Samuel, did you know that?
 Samuel: I did not.
 AListair: oh...I didn't kill him.
 Protagonist: interesting....interesting....I think I need to hear more from (RETURN TO CHOICE)
@@ -84,17 +85,16 @@ Protagonist: I think I've heard enough....the killer is (CHOICE)
 (CHOICE 1) Mrs. Crawford
 
 Protagonist: The murderer is you Mrs. Crawford!
-Mrs. Crawford: Its true... I couldn't live with the shame of being married to a man like that.
+Mrs. Crawford: It's true... I couldn't live with the shame of being married to a man like that.
 Mrs. Crawford: If my friends found out... I would be ruined.
 Mrs. Crawford: I thought that if I got him out of the way I could go back to having a normal life.
 Mrs. Crawford: I had planned to poison his tea and blame Samuel but the man would not die.
 Mrs. Crawford: I became desperate and couldn't take it any more...so I killed my husband.
 Mrs. Crawford: And the funeral would have been a lavish event.
-Mrs. Crawford: I can just see myself in a new black dress I'd be the talk of the town for months.
-Mrs. Crawford: It would be perfect.
+Mrs. Crawford: I can just see myself in a new black dress; I'd be the talk of the town for months!
+Mrs. Crawford: It would have been perfect.
 Mrs. Crawford: Surely there must be some mercy in your heart for an old woman who just wanted a normal life?
 Protagonist: Not today ma'am. 
-Alistair: Wait...Who's Shirley?
 
 (CHOICE 2) Samuel
 
@@ -105,16 +105,18 @@ Samuel: Using me as a footrest...How dare he.
 Samuel: I knew the man's boy had a mean streak so I figured I could stab him to death and blame the son.
 Samuel: Clearly I was wrong, but if I could still blame the boy I would like to.
 Samuel: Oh well... maybe I can serve tea in prison.
+Protagonist: There is no tea in prison.
+Samuel: Then I will find something else to serve.
+
 
 (CHOICE 3) Alistair
 
 Protagonist: The murderer is you Alistair!
-Alistair: How dare you accuse me of that!
+Alistair: How could you accuse me of that?
 Protagonist: Because you killed him.
 Alistair: You can't prove that I came in here and stabbed daddy.
-Alistair: No one say me come in here today and you won't find my fingerprints because I wore gloves.
-AListair: No one was around, and I knew that I could blame mother.
-Alistair: Oh...can I take that back.
+AListair: No one was around, and I thought that I could blame mother.
+Alistair: Oh...can I take that back?
 Mrs. Crawford: Never was a clever boy.
 Alistair: Well you got me. I killed him, but the money should be mine.
 Alistair: I deserve it, not some starving street urchin. What have the poor every done for daddy?
@@ -122,4 +124,4 @@ Alistair: Giving his money to those who don't deserve it is the real crime. Arre
 Protagonist: Arrest the dead man?
 Alistair: Yes.
 Protagonist: I'm afraid I can't do that.
-Protagonist: Instead I'll have to settle for arresting you for the actual crime of murder.
+Protagonist: Then I will settle for arresting you for murder.
