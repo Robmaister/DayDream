@@ -5,6 +5,7 @@ var res = {
      proto_d : "res/d_key_proto.png",
      proto_bg: "res/bg_proto.png",
      ddr_map:  "res/DDRmapproto.tmx",
+     ddr_map_big: "res/proto_bigmap.tmx",
 };
 
 var g_resources = [];

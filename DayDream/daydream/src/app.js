@@ -1,16 +1,42 @@
+//sprite class for the icons at the button for timing
+var Base_icon = cc.Sprite.extend({
+    ctor:function(spite_img, posx,posy){
+        console.log("before img");
+        if (spite_img == 1){
+            this._super(res.proto_w);
+        }else if (spite_img == 2){
+            this._super(res.proto_a);
+        }else if (spite_img == 3){
+            this._super(res.proto_s);
+        }else{
+            this._super(res.proto_d);
+        }
+        
+        console.log("after img");
+        this.setScale(.25);
+        this.setAnchorPoint(0,0);
+        this.setPosition(posx,posy);
+    }
+})
+//individula objects for each of the icons
 var W_icon = cc.Sprite.extend({
     ctor:function(posx, posy){
         this._super(res.proto_w);
         this.setScale(.25);
         this.setAnchorPoint(0,0);
-        this.setPosition(posx,posy);
+        this.setPosition(250,posy);
         this.alive = true;
         this.isKeyboardEnabled = true;
+        this.timer = 0;
+        this.rate = .05;
         this.scheduleUpdate();//do this so the update method gets callled
     },
     update:function(dt){
-         
-        this.y -= .05;
+        this.timer +=1;
+        if ( this.timer % 100 == 0){
+            this.rate = 2 * this.rate;
+        }
+        this.y -= this.rate;
         //this.y -= 5;
     },
     testing:function(){
@@ -21,27 +47,30 @@ var W_icon = cc.Sprite.extend({
         if( this.y < 100 && this.y > 10){
             console.log("success");
         }
-        if (this.y < 0){
-            this.visible = false;
-        }
+        this.visible = false;
         this.active = false;
         this.stopAllActions();
     }
     
 });
 var A_icon = cc.Sprite.extend({
-    ctor:function(){
+    ctor:function(posx,posy){
         this._super(res.proto_a);
         this.setScale(.25);
         this.setAnchorPoint(0,0);
-        this.setPosition(500,300);
+        this.setPosition(400,posy);
         this.alive = true;
         this.isKeyboardEnabled = true;
+        this.timer = 0;
+        this.rate = .05;
         this.scheduleUpdate();//do this so the update method gets callled
     },
     update:function(dt){
-         
-        this.y -= .05;
+        this.timer +=1;
+        if ( this.timer % 100 == 0){
+            this.rate = 2 * this.rate;
+        }
+        this.y -= this.rate;
         //this.y -= 5;
     },
     testing:function(){
@@ -59,18 +88,23 @@ var A_icon = cc.Sprite.extend({
     
 });
 var S_icon = cc.Sprite.extend({
-    ctor:function(){
+    ctor:function(posx,posy){
         this._super(res.proto_s);
         this.setScale(.25);
         this.setAnchorPoint(0,0);
-        this.setPosition(700,300);
+        this.setPosition(550,posy);
         this.alive = true;
+        this.timer = 0;
+        this.rate = .05;
         this.isKeyboardEnabled = true;
         this.scheduleUpdate();//do this so the update method gets callled
     },
     update:function(dt){
-         
-        this.y -= .05;
+        this.timer +=1;
+        if ( this.timer % 100 == 0){
+            this.rate = 2 * this.rate;
+        }
+        this.y -= this.rate;
         //this.y -= 5;
     },
     testing:function(){
@@ -85,20 +119,27 @@ var S_icon = cc.Sprite.extend({
         this.active = false;
         this.stopAllActions();
     }
+
     
 }); 
 var D_icon = cc.Sprite.extend({
-    ctor:function(){
+    ctor:function(posx,posy){
         this._super(res.proto_d);
         this.setScale(.25);
         this.setAnchorPoint(0,0);
-        this.setPosition(200,300);
+        this.setPosition(700, posy);
         this.alive = true;
+        this.timer = 0;
+        this.rate = .05;
         this.isKeyboardEnabled = true;
         this.scheduleUpdate();//do this so the update method gets callled
     },
     update:function(dt){
-        this.y -= .05;
+        this.timer +=1;
+        if ( this.timer % 100 == 0){
+            this.rate = 2 * this.rate;
+        }
+        this.y -= this.rate;
         //this.y -= 5;
     },
     testing:function(){
@@ -107,25 +148,28 @@ var D_icon = cc.Sprite.extend({
         this.alive = false;
         //valid correction box point ++
         if( this.y < 100 && this.y > 10){
+            //or play the you got it animation
             console.log("success");
         }
         this.visible = false;
         this.active = false;
         this.stopAllActions();
     }
+
     
 });  
 var DDRMAP = cc.TMXTiledMap.extend({
     ctor: function(w_map,s_map,a_map,d_map){
         this._super();
         this.ddr_w_key = [];
-        this.map = new cc.TMXTiledMap(res.ddr_map);
+        this.map = new cc.TMXTiledMap(res.ddr_map_big);
         this.addChild(this.map, 0, 1);
         //this.initWithTMXFile(res.ddr_map);
         this.analyze(w_map,s_map,a_map,d_map);
         this.scheduleUpdate();
     },
     analyze:function(w_map,s_map,a_map,d_map){
+        //creating an object group for each button
         var w_group= this.map.getObjectGroup("w_key");
         var w_array= w_group.getObjects();
 
@@ -137,7 +181,8 @@ var DDRMAP = cc.TMXTiledMap.extend({
 
         var d_group= this.map.getObjectGroup("d_key");
         var d_array= d_group.getObjects();
-
+        //go through tile map and store all the objects in the layer
+        // and generate their strarting position
         for (var i =0; i < w_array.length ; i++){
             //console.log("%d x, %d y ",w_array[i]["x"], w_array[i]["y"]);
             var w_button = new W_icon(w_array[i]["x"], w_array[i]["y"]);
@@ -146,7 +191,7 @@ var DDRMAP = cc.TMXTiledMap.extend({
             //console.log("adding");
         }
         for (var s_iter =0; s_iter < s_array.length ; s_iter++){
-            var s_button = new S_icon(s_array[s_iter]["x"], s_array[s_iter]["y"]);
+            var s_button = new S_icon(s_array[s_iter]["x"], s_array[s_iter]["y"] );
             s_map.push(s_button);
         }
         for (var a_iter =0; a_iter < a_array.length ; a_iter++){
@@ -155,7 +200,7 @@ var DDRMAP = cc.TMXTiledMap.extend({
         }
         for (var d_iter =0; d_iter < d_array.length ; d_iter++){
             var d_button = new D_icon(d_array[d_iter]["x"], d_array[d_iter]["y"]);
-            d_map.push(d_button);
+            d_map.push(d_button); 
         }
     }
 })
@@ -164,12 +209,13 @@ var HelloWorldLayer = cc.Layer.extend({
     ctor:function () {
         //////////////////////////////
         // 1. super init first
-        this._super(res.proto_bg);
+        this._super();
+        //creating a map to hold th eobjects for each button
         this.ddr_w_map = [];
         this.ddr_s_map = [];
         this.ddr_a_map = [];
         this.ddr_d_map = [];
-
+        //Pass the maps in and then add them as children
         this.tilemap = new DDRMAP(this.ddr_w_map,this.ddr_s_map,this.ddr_a_map,this.ddr_d_map);
         for (var l = 0; l < this.ddr_w_map.length ; l ++){
             this.addChild(this.ddr_w_map[l]);
@@ -183,7 +229,17 @@ var HelloWorldLayer = cc.Layer.extend({
         for (var d_iter = 0; d_iter < this.ddr_d_map.length ; d_iter ++){
             this.addChild(this.ddr_d_map[d_iter]);
         }
+        //Making ht e base images to line up
+        var temp = new Base_icon(1, 250,10);
+        this.addChild(temp);
+        temp = new Base_icon(2, 400,10);
+        this.addChild(temp);
+        temp = new Base_icon(3, 550,10);
+        this.addChild(temp);
+        temp = new Base_icon(4, 700,10);
+        this.addChild(temp);
 
+        //enables keyboard input
         this.isKeyboardEnabled = true;
         console.log("works");
         cc.eventManager.addListener({
@@ -203,6 +259,7 @@ var HelloWorldLayer = cc.Layer.extend({
             //w key
             case 87:
                 this.ddr_w_map[0].testing();
+                this.ddr_w_map.pop();
                 break;
             //d key
             case 68:

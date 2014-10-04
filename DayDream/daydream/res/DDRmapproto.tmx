@@ -12,17 +12,21 @@
   </data>
  </layer>
  <objectgroup name="w_key">
-  <object name="spawn_w" x="64" y="28" width="32" height="36"/>
-  <object x="178" y="29" width="32" height="35"/>
+  <object x="4" y="161" width="29" height="27"/>
+  <object x="4" y="68" width="26" height="24"/>
+  <object x="35" y="10" width="27" height="26"/>
  </objectgroup>
  <objectgroup name="a_key">
-  <object x="121" y="79" width="37" height="28"/>
+  <object x="64" y="159" width="31" height="29"/>
+  <object x="67" y="63" width="29" height="31"/>
  </objectgroup>
  <objectgroup name="s_key">
-  <object x="6" y="110" width="27" height="23"/>
+  <object x="131" y="159" width="25" height="25"/>
+  <object x="128" y="108" width="31" height="21"/>
  </objectgroup>
  <objectgroup name="d_key">
-  <object x="306" y="17"/>
-  <object x="230" y="94" width="31" height="31"/>
+  <object x="193" y="155" width="32" height="28"/>
+  <object x="195" y="45" width="32" height="26"/>
+  <object x="197" y="5" width="25" height="19"/>
  </objectgroup>
 </map>
