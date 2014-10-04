@@ -1,9 +1,9 @@
 var W_icon = cc.Sprite.extend({
-    ctor:function(){
+    ctor:function(posx, posy){
         this._super(res.proto_w);
         this.setScale(.25);
         this.setAnchorPoint(0,0);
-        this.setPosition(300,300);
+        this.setPosition(posx,posy);
         this.alive = true;
         this.isKeyboardEnabled = true;
         this.scheduleUpdate();//do this so the update method gets callled
@@ -13,17 +13,6 @@ var W_icon = cc.Sprite.extend({
         this.y -= .05;
         //this.y -= 5;
     },
-    /*move_right:function(){
-        console.log("right");
-        this.x += 10;
-    },
-    handleKey:function(keycode){
-        console.log("herer");
-        
-    },
-    printing_stuff:function(){
-        console.log("nothing");
-    },*/
     testing:function(){
         //already pressed the key
         //destroy object
@@ -32,7 +21,9 @@ var W_icon = cc.Sprite.extend({
         if( this.y < 100 && this.y > 10){
             console.log("success");
         }
-        this.visible = false;
+        if (this.y < 0){
+            this.visible = false;
+        }
         this.active = false;
         this.stopAllActions();
     }
@@ -107,7 +98,6 @@ var D_icon = cc.Sprite.extend({
         this.scheduleUpdate();//do this so the update method gets callled
     },
     update:function(dt){
-         
         this.y -= .05;
         //this.y -= 5;
     },
@@ -126,35 +116,46 @@ var D_icon = cc.Sprite.extend({
     
 });  
 var DDRMAP = cc.TMXTiledMap.extend({
-    ctor: function(){
-        this._super(res.ddr_map);
+    ctor: function(w_map,s_map,a_map,d_map){
+        this._super();
+        this.ddr_w_key = [];
         this.map = new cc.TMXTiledMap(res.ddr_map);
         this.addChild(this.map, 0, 1);
         //this.initWithTMXFile(res.ddr_map);
-        this.analyze();
+        this.analyze(w_map,s_map,a_map,d_map);
+        this.scheduleUpdate();
     },
-    analyze:function(){
-        this.obstacles =[];
-        this.mapWidth = this.getMapSize().width;
-        this.mapHeight = this.getMapSize().height;
-        this.tileWidth = this.getTileSize().width;
-        this.tileHeight = this.getTileSize().height;
-        this.icon_layer = this.map.getLayer("object2");
-        if (this.icon_layer == null){
-            console.log("wrong");
+    analyze:function(w_map,s_map,a_map,d_map){
+        var w_group= this.map.getObjectGroup("w_key");
+        var w_array= w_group.getObjects();
+
+        var s_group= this.map.getObjectGroup("s_key");
+        var s_array= s_group.getObjects();
+
+        var a_group= this.map.getObjectGroup("a_key");
+        var a_array= a_group.getObjects();
+
+        var d_group= this.map.getObjectGroup("d_key");
+        var d_array= d_group.getObjects();
+
+        for (var i =0; i < w_array.length ; i++){
+            //console.log("%d x, %d y ",w_array[i]["x"], w_array[i]["y"]);
+            var w_button = new W_icon(w_array[i]["x"], w_array[i]["y"]);
+            //var w_button = new w_key_ddr(cc.p(w_array[i]["x"] +this.map.mapwidth, w_array[i],["y"]) );
+            w_map.push(w_button);
+            //console.log("adding");
         }
-        var i , j;
-        for (i = 0; i < this.mapWidth; i++){
-            for (j = 0; j <this. mapHeight; j++){
-                var tileCoord = new cc.Point(i, j);
-                var gid = this.icon_layer.getTileGIDAt(tileCoord);
-                if(gid) {
-                    var tileXPositon = i * this.tileWidth;
-                    var tileYPosition = (this.mapHeight * this.tileHeight) - ((j+1) * this.tileHeight);
-                    var react = cc.rect(tileXPositon, tileYPosition, this.tileWidth, this.tileHeight);
-                    this.obstacles.push(react);
-                }
-            }
+        for (var s_iter =0; s_iter < s_array.length ; s_iter++){
+            var s_button = new S_icon(s_array[s_iter]["x"], s_array[s_iter]["y"]);
+            s_map.push(s_button);
+        }
+        for (var a_iter =0; a_iter < a_array.length ; a_iter++){
+            var a_button = new A_icon(a_array[a_iter]["x"], w_array[a_iter]["y"]);
+            a_map.push(a_button);
+        }
+        for (var d_iter =0; d_iter < d_array.length ; d_iter++){
+            var d_button = new D_icon(d_array[d_iter]["x"], d_array[d_iter]["y"]);
+            d_map.push(d_button);
         }
     }
 })
@@ -164,20 +165,24 @@ var HelloWorldLayer = cc.Layer.extend({
         //////////////////////////////
         // 1. super init first
         this._super(res.proto_bg);
-        this.icon_w = new W_icon();
-        this.addChild(this.icon_w);
-        var w_list = [this.icon_w];
+        this.ddr_w_map = [];
+        this.ddr_s_map = [];
+        this.ddr_a_map = [];
+        this.ddr_d_map = [];
 
-        this.icon_a = new A_icon();
-        this.addChild(this.icon_a);
-
-        this.icon_s = new S_icon();
-        this.addChild(this.icon_s);
-
-        this.icon_d = new D_icon();
-        this.addChild(this.icon_d);
-
-        this.tilemap = new DDRMAP();
+        this.tilemap = new DDRMAP(this.ddr_w_map,this.ddr_s_map,this.ddr_a_map,this.ddr_d_map);
+        for (var l = 0; l < this.ddr_w_map.length ; l ++){
+            this.addChild(this.ddr_w_map[l]);
+        }
+        for (var s_iter = 0; s_iter < this.ddr_s_map.length ; s_iter ++){
+            this.addChild(this.ddr_s_map[s_iter]);
+        }
+        for (var a_iter = 0; a_iter < this.ddr_a_map.length ; a_iter ++){
+            this.addChild(this.ddr_a_map[a_iter]);
+        }
+        for (var d_iter = 0; d_iter < this.ddr_d_map.length ; d_iter ++){
+            this.addChild(this.ddr_d_map[d_iter]);
+        }
 
         this.isKeyboardEnabled = true;
         console.log("works");
@@ -197,19 +202,19 @@ var HelloWorldLayer = cc.Layer.extend({
         switch(key){
             //w key
             case 87:
-                this.icon_w.testing();
+                this.ddr_w_map[0].testing();
                 break;
             //d key
             case 68:
-                this.icon_d.testing();
+                this.ddr_d_map[0].testing();
                 break;
             //s key
             case 83:
-                this.icon_s.testing();
+                this.ddr_s_map[0].testing();
                 break;
             //a key
             case 65:
-                this.icon_a.testing();
+                this.ddr_a_map[0].testing();
                 break;
         }
     },

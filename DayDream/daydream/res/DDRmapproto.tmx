@@ -11,11 +11,18 @@
    eJwzZGBgMBzFgwYDABzZEyU=
   </data>
  </layer>
- <objectgroup name="object">
-  <object name="w key" x="63" y="69" width="34" height="49"/>
+ <objectgroup name="w_key">
+  <object name="spawn_w" x="64" y="28" width="32" height="36"/>
+  <object x="178" y="29" width="32" height="35"/>
  </objectgroup>
- <objectgroup name="object2">
-  <object x="115" y="61" width="82" height="86"/>
-  <object x="74" y="59" height="1"/>
+ <objectgroup name="a_key">
+  <object x="121" y="79" width="37" height="28"/>
+ </objectgroup>
+ <objectgroup name="s_key">
+  <object x="6" y="110" width="27" height="23"/>
+ </objectgroup>
+ <objectgroup name="d_key">
+  <object x="306" y="17"/>
+  <object x="230" y="94" width="31" height="31"/>
  </objectgroup>
 </map>
