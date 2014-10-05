@@ -28,26 +28,6 @@ bell rings
 Teacher: Remember, the last two chapters are homework tonight. We will discuss the ending in class tomorrow.
 Conrad:(I don't need to read to figure out who the murderer is, I've already figured it out)
 
-
-#UPON ENTERING CS CLASS
-#
-#Teacher: Today we will be discussing class variables.
-#Teacher: A class variable is a special variable that is defined inside of a class.
-#Teacher: This variable is unique to each instance of the class and affects the functionality of the class.
-#Conrad starts daydreaming
-#Conrad: If I change the variables I change what happens.
-#Conrad: What could I do that in real life. How cool would it be to change the variables of reality.
-#
-#START DAYDREAMING MINIGAME
-#
-#AFTER MINIGAME
-#
-#bell rings
-#Teacher: Remember... your project is due on Thursday...the instructions are on my website.
-#Conrad: I'll just press the button and change that Thursday to never.
-
-
-
 UPON ENTERING SPANISH CLASS
 
 Mrs.Sanchez(the Spanish teacher): Okay class. lets start with some simple questions
@@ -70,17 +50,14 @@ Conrad: I'll have you know that I am the best Salsa dancer in the world.
 Mrs.Sanchez: Prove it to me. Let us dance.
 (Begin the dancing)
 (After the dancing)
-Mrs.Sanchez: Conrad you truly are the best Salsa dancer in the world.
+Mrs.Sanchez: Conrad you truly are a fantastic dancer.
 AFTER DAY DREAM MINIGAME
 (Bell rings)
 Mrs.Sanchez: Remember class...next Thursday your cultural presentations are due.
 Mrs.Sanchez: Anything is acceptable. Cook something, review a Spanish movie, just pass it by me first.
 Conrad:(Maybe I actually should learn to dance)
 
-
-
 AFTER ALL THE MINI-GAMES
 
 (final bell rings)
-Conrad: Today wasn't as bad as I thought it would be
-Conrad: School can be fun when you pay attention.
+Conrad: Today wasn't as bad as I thought it would be.
