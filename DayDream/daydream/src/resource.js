@@ -6,6 +6,10 @@ var res = {
      proto_bg: "res/bg_proto.png",
      ddr_map:  "res/DDRmapproto.tmx",
      ddr_map_big: "res/proto_bigmap.tmx",
+	 cocosui_btn: "res/cocosui/button.png",
+	 cocosui_btn_highlight: "res/cocosui/buttonHighlighted.png",
+	 map_overworld_0: "res/over/map_0.tmx",
+	 map_overworld_png: "res/over/map.png",
 };
 
 var g_resources = [];
