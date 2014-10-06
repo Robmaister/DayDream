@@ -287,4 +287,3 @@ var HelloWorldScene = cc.Scene.extend({
         //this.addChild(talk_minigame);
     }
 });
-

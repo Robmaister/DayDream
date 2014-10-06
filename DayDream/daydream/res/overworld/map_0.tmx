@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="50" height="50" tilewidth="64" tileheight="64" backgroundcolor="#000000">
+ <tileset firstgid="1" name="Overworld Tiles" tilewidth="64" tileheight="64">
+  <image source="map.png" width="512" height="512"/>
+  <tile id="0">
+   <properties>
+    <property name="Name" value="Beige 1"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Name" value="Beige 2"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="Name" value="Brown 1"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="Name" value="Brown 2"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="Name" value="Wall Top"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="Name" value="Wall Bottom"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="Name" value="Wall Inner Top Left"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="Name" value="Wall Inner Top Right"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="Name" value="Beige 3"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="Name" value="Beige 4"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="Name" value="Brown 3"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="Name" value="Brown 4"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="Name" value="Wall Left"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="Name" value="Wall Right"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="Name" value="Wall Inner Bottom Left"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="Name" value="Wall Inner Bottom Right"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="Name" value="Wall Outer Top Left"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="Name" value="Wall Outer Top Right"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="Name" value="Wall Outer Bottom Left"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="Name" value="Wall Outer Bottom Right"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Map" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2YUWvDMAyEnbAN9rDC9rb9/x+6DCp2fJWcpSyyCzoQaYNCdZHsO7e1W7xv8bwTH3fkZuNti9ct1uvViwtyF4kV3y9tDKw2L4ybx4N8yDkbymNtv7XrVXks7bYf1pMZeURztSBnxb2RPKL6o/WhM8VnR/fjCA/tAWdsdD+4vnvrgz1QXqP70QtvnZMHOWfjc4sXiadr6L2vO3JHw2r779wz4fkMq23PfxzNPdOv2LxzPej8q15Tu7lf8bkMfbR3ab/DvZQ6rTXrZz5LXcziwVrpmyI/GHkT7V0mj8hf8H2SK2vf43jmfkz/qjVyvvlZv3vrJtLSM0A9iDQhiiO52bryiPrxA2qIpwnRubaXmw3PM0V7pnlKT1/s/gx+N9pnPd8e7V0jefT0uOd36QVG8/DOdxqcq7/0Lht6ro1mPzqfU79nOUdR5zjzvdwZeEQelTOv+xW1fJZ13vNO0f9X2pfR69zzJpGnOJJbKBQKhUKhUCgUCoVCofAI+AbPquQkECcAAA==
+  </data>
+ </layer>
+ <layer name="Walls" width="50" height="50" opacity="0.4">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2X4a7CMAiFWXP/+Fa8/1PpEknOTqGuuRa3hC8hTnN0nLVQFOnRkzGrzWa/7+MV7f3qhZJ2g2j03rTZWG5emDcl7Sa9H/acjeVmeTc5emhy9LFJvx62Jlf0Ee2rjTSNPjNtNipx/lF94J7i75o2G8ttxgeuAe8x02aj0nvgOlHQemuAvkybjUq8DlF9eDXCnrNRir938Oez2l9juX1buxJ1InrG/9Xql3NH9t/Gsxh7apNjf+VrrG/uWfgbq89He5Z2H+6lfE5jznjN3+VzMcsH58pzUzQPRrMJrl2mj2i+4OfJXjn3Tx5X+RDp51fMkfc3X+N7r26is3SVD4479iuPO54fOyrnnvGsNpv9vtz7o56p4vdVrCXTZmO5jf53K2i5H3DdmzYblfF5PJp3eRb4tQ/v/x2Ggvbs2mVjuUUzBe+r0ey1+pwYoXLcF3yOefXhaa/gg2sC9z378Oaoq/SrT7OTktabB69Q52diVlsURVEURVEURVEURXEHnrAJg2cQJwAA
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object name="Start" x="382.667" y="896" width="64" height="64"/>
+ </objectgroup>
+</map>
