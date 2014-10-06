@@ -8,8 +8,9 @@ var res = {
      ddr_map_big: "res/proto_bigmap.tmx",
 	 cocosui_btn: "res/cocosui/button.png",
 	 cocosui_btn_highlight: "res/cocosui/buttonHighlighted.png",
-	 map_overworld_0: "res/over/map_0.tmx",
-	 map_overworld_png: "res/over/map.png",
+	 map_overworld_0: "res/overworld/map_0.tmx",
+	 map_overworld_png: "res/overworld/map.png",
+	 sprite_student: "res/StudentSpriteStill.png",
 };
 
 var g_resources = [];

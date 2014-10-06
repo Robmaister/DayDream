@@ -1,7 +1,7 @@
 var DebugMenuLayer = cc.Layer.extend({
 	sprite:null,
 	ctor:function() {
-		this._super(res.proto_bg);
+		this._super();
 		
 		menuArray = ["Overworld", "DDR Minigame"];
 		
@@ -34,7 +34,6 @@ var DebugMenuLayer = cc.Layer.extend({
 	},
 	
 	selectItemEvent: function(sender, type) {
-		cc.log("button pressed");
 		switch (type) {
 			case ccui.Widget.TOUCH_ENDED:
 				var newScene = null;
