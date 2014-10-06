@@ -21,7 +21,7 @@ var res = {
      salsa_music: "res/Salsa_Music.mp3",
      cocosui_btn: "res/cocosui/button.png",
      cocosui_btn_highlight :"res/cocosui/buttonHighlighted.png",
-     map_overworld_0: "res/over/map_0.tmx",
+     map_overworld_0: "res/overworld/map_0.tmx",
      map_overworld_png: "res/overworld/map_0.tmx",
      sprite_student: "res/StudentSpriteStill.png",
 };
