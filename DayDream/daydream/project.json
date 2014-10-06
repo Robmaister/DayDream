@@ -8,14 +8,17 @@
     "renderMode" : 0,
     "engineDir":"frameworks/cocos2d-html5",
 
-    "modules" : ["cocos2d","ccui"],
+    "modules" : ["cocos2d","ccui","extensions","chipmunk"],
 
     "jsList" : [
         "src/resource.js",
         "src/app.js",
         "src/UIScene.js",
         "src/UISceneManager.js",
-        "src/talk_minigame/conversation.js"
+        "src/talk_minigame/conversation.js",
+        "src/constants.js",
+        "src/debugMenu.js",
+        "src/overworldScene.js"
         
     ]
 }
