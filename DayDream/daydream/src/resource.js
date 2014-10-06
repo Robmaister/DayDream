@@ -6,6 +6,19 @@ var res = {
      proto_bg: "res/bg_proto.png",
      ddr_map:  "res/DDRmapproto.tmx",
      ddr_map_big: "res/proto_bigmap.tmx",
+     w_button: "res/DDR_letter_W.png",
+     a_button: "res/DDR_letter_A.png",
+     s_button: "res/DDR_letter_S.png",
+     d_button: "res/DDR_letter_D.png",
+
+     w_outline: "res/DDR_outline_W.png",
+     a_outline: "res/DDR_outline_A.png",
+     s_outline: "res/DDR_outline_S.png",
+     d_outline: "res/DDR_outline_D.png",
+
+     speech_bubble : "res/speech_bubble.png",
+
+     salsa_music: "res/Salsa_Music.mp3"
 };
 
 var g_resources = [];

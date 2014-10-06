@@ -8,10 +8,14 @@
     "renderMode" : 0,
     "engineDir":"frameworks/cocos2d-html5",
 
-    "modules" : ["cocos2d"],
+    "modules" : ["cocos2d","ccui"],
 
     "jsList" : [
         "src/resource.js",
-        "src/app.js"
+        "src/app.js",
+        "src/UIScene.js",
+        "src/UISceneManager.js",
+        "src/talk_minigame/conversation.js"
+        
     ]
 }

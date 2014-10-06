@@ -3,17 +3,15 @@ var Base_icon = cc.Sprite.extend({
     ctor:function(spite_img, posx,posy){
         console.log("before img");
         if (spite_img == 1){
-            this._super(res.proto_w);
+            this._super(res.w_button);
         }else if (spite_img == 2){
-            this._super(res.proto_a);
+            this._super(res.a_button);
         }else if (spite_img == 3){
-            this._super(res.proto_s);
+            this._super(res.s_button);
         }else{
-            this._super(res.proto_d);
+            this._super(res.d_button);
         }
-        
-        console.log("after img");
-        this.setScale(.25);
+        this.setScale(.20);
         this.setAnchorPoint(0,0);
         this.setPosition(posx,posy);
     }
@@ -21,10 +19,10 @@ var Base_icon = cc.Sprite.extend({
 //individula objects for each of the icons
 var W_icon = cc.Sprite.extend({
     ctor:function(posx, posy){
-        this._super(res.proto_w);
-        this.setScale(.25);
+        this._super(res.w_outline);
+        this.setScale(.20);
         this.setAnchorPoint(0,0);
-        this.setPosition(250,posy);
+        this.setPosition(100,posy);
         this.alive = true;
         this.isKeyboardEnabled = true;
         this.timer = 0;
@@ -33,7 +31,7 @@ var W_icon = cc.Sprite.extend({
     },
     update:function(dt){
         this.timer +=1;
-        if ( this.timer % 100 == 0){
+        if ( this.timer % 200 == 0){
             this.rate = 2 * this.rate;
         }
         this.y -= this.rate;
@@ -44,7 +42,7 @@ var W_icon = cc.Sprite.extend({
         //destroy object
         this.alive = false;
         //valid correction box point ++
-        if( this.y < 100 && this.y > 10){
+        if( this.y < 100 && this.y > 0){
             console.log("success");
         }
         this.visible = false;
@@ -55,10 +53,10 @@ var W_icon = cc.Sprite.extend({
 });
 var A_icon = cc.Sprite.extend({
     ctor:function(posx,posy){
-        this._super(res.proto_a);
-        this.setScale(.25);
+        this._super(res.a_outline);
+        this.setScale(.20);
         this.setAnchorPoint(0,0);
-        this.setPosition(400,posy);
+        this.setPosition(200,posy);
         this.alive = true;
         this.isKeyboardEnabled = true;
         this.timer = 0;
@@ -67,7 +65,7 @@ var A_icon = cc.Sprite.extend({
     },
     update:function(dt){
         this.timer +=1;
-        if ( this.timer % 100 == 0){
+        if ( this.timer % 200 == 0){
             this.rate = 2 * this.rate;
         }
         this.y -= this.rate;
@@ -78,7 +76,7 @@ var A_icon = cc.Sprite.extend({
         //destroy object
         this.alive = false;
         //valid correction box point ++
-        if( this.y < 100 && this.y > 10){
+        if( this.y < 100 && this.y > 0){
             console.log("success");
         }
         this.visible = false;
@@ -89,10 +87,10 @@ var A_icon = cc.Sprite.extend({
 });
 var S_icon = cc.Sprite.extend({
     ctor:function(posx,posy){
-        this._super(res.proto_s);
-        this.setScale(.25);
+        this._super(res.s_outline);
+        this.setScale(.20);
         this.setAnchorPoint(0,0);
-        this.setPosition(550,posy);
+        this.setPosition(300,posy);
         this.alive = true;
         this.timer = 0;
         this.rate = .05;
@@ -101,7 +99,7 @@ var S_icon = cc.Sprite.extend({
     },
     update:function(dt){
         this.timer +=1;
-        if ( this.timer % 100 == 0){
+        if ( this.timer % 200 == 0){
             this.rate = 2 * this.rate;
         }
         this.y -= this.rate;
@@ -112,7 +110,7 @@ var S_icon = cc.Sprite.extend({
         //destroy object
         this.alive = false;
         //valid correction box point ++
-        if( this.y < 100 && this.y > 10){
+        if( this.y < 100 && this.y > 0){
             console.log("success");
         }
         this.visible = false;
@@ -124,10 +122,10 @@ var S_icon = cc.Sprite.extend({
 }); 
 var D_icon = cc.Sprite.extend({
     ctor:function(posx,posy){
-        this._super(res.proto_d);
-        this.setScale(.25);
+        this._super(res.d_outline);
+        this.setScale(.20);
         this.setAnchorPoint(0,0);
-        this.setPosition(700, posy);
+        this.setPosition(400, posy);
         this.alive = true;
         this.timer = 0;
         this.rate = .05;
@@ -136,7 +134,7 @@ var D_icon = cc.Sprite.extend({
     },
     update:function(dt){
         this.timer +=1;
-        if ( this.timer % 100 == 0){
+        if ( this.timer % 200 == 0){
             this.rate = 2 * this.rate;
         }
         this.y -= this.rate;
@@ -147,7 +145,7 @@ var D_icon = cc.Sprite.extend({
         //destroy object
         this.alive = false;
         //valid correction box point ++
-        if( this.y < 100 && this.y > 10){
+        if( this.y < 100 && this.y > 0){
             //or play the you got it animation
             console.log("success");
         }
@@ -210,6 +208,7 @@ var HelloWorldLayer = cc.Layer.extend({
         //////////////////////////////
         // 1. super init first
         this._super();
+        cc.audioEngine.playMusic(res.salsa_music,true);
         //creating a map to hold th eobjects for each button
         this.ddr_w_map = [];
         this.ddr_s_map = [];
@@ -230,13 +229,13 @@ var HelloWorldLayer = cc.Layer.extend({
             this.addChild(this.ddr_d_map[d_iter]);
         }
         //Making ht e base images to line up
-        var temp = new Base_icon(1, 250,10);
+        var temp = new Base_icon(1, 100,10);
         this.addChild(temp);
-        temp = new Base_icon(2, 400,10);
+        temp = new Base_icon(2, 200,10);
         this.addChild(temp);
-        temp = new Base_icon(3, 550,10);
+        temp = new Base_icon(3, 300,10);
         this.addChild(temp);
-        temp = new Base_icon(4, 700,10);
+        temp = new Base_icon(4, 400,10);
         this.addChild(temp);
 
         //enables keyboard input
@@ -284,7 +283,8 @@ var HelloWorldScene = cc.Scene.extend({
         this._super();
         var layer = new HelloWorldLayer();
         this.addChild(layer);
-
+        //var talk_minigame = new newtalk1();
+        //this.addChild(talk_minigame);
     }
 });
 
