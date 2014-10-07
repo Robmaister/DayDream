@@ -48,3 +48,10 @@ var Conversation = cc.Layer.extend({
     	var first_conversation = new newtalk1();
     }
 });
+var ConversationScene = cc.Scene.extend({
+    onEnter:function () {
+        this._super();
+        var layer = new Conversation();
+        this.addChild(layer);
+    }
+});
