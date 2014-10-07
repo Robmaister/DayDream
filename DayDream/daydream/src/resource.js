@@ -24,6 +24,7 @@ var res = {
      map_overworld_0: "res/overworld/map_0.tmx",
      map_overworld_png: "res/overworld/map_0.tmx",
      sprite_student: "res/StudentSpriteStill.png",
+     teacher_dance: "res/TeacherDance.png"
 };
 
 var g_resources = [];

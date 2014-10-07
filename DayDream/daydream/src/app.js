@@ -1,7 +1,6 @@
 //sprite class for the icons at the button for timing
 var Base_icon = cc.Sprite.extend({
     ctor:function(spite_img, posx,posy){
-        console.log("before img");
         if (spite_img == 1){
             this._super(res.w_button);
         }else if (spite_img == 2){
@@ -205,10 +204,12 @@ var DDRMAP = cc.TMXTiledMap.extend({
 var HelloWorldLayer = cc.Layer.extend({
     sprite:null,
     player:null,
+    teacher:null,
     ctor:function () {
         //////////////////////////////
         // 1. super init first
         this._super();
+        //music
         cc.audioEngine.playMusic(res.salsa_music,true);
         //creating a map to hold th eobjects for each button
         this.ddr_w_map = [];
@@ -239,12 +240,36 @@ var HelloWorldLayer = cc.Layer.extend({
         temp = new Base_icon(4, 400,10);
         this.addChild(temp);
 
-        this.player = cc.Sprite.create(res.student_dance);
-        this.player.setPosition(cc.p(420,100));
-        this.addChild(this.player);
-        //enables keyboard input
+        //Createing/ animating the player dancing
+        this.player_animation = cc.Animation.create();
+        this.player_anim_frame = [];
+        for (var i = 0; i < 4 ; i++){
+            var frame = cc.SpriteFrame.createWithTexture(res.student_dance, cc.rect((i *100 ),0 ,100,100)); 
+            this.player_anim_frame.push(frame);
+        }
+        this.player_animation = cc.Animation.create(this.player_anim_frame , .2);
+        this.animate = cc.Animate.create(this.player_animation);
+        this.sprite = cc.Sprite.createWithTexture(res.student_dance,cc.rect(0,0,100,100));
+        this.sprite.attr({x:600, y:500});
+        this.runningaction = cc.RepeatForever.create(this.animate);
+        this.sprite.runAction(this.runningaction);
+        this.addChild(this.sprite);
+        //Making the teacher dance
+        this.teacher_animation = cc.Animation.create();
+        this.teacher_ani_frame = [];
+        for (var i = 0; i < 4 ; i++){
+            var frame = cc.SpriteFrame.createWithTexture(res.teacher_dance, cc.rect((i *100 ),0 ,100,100)); 
+            this.teacher_ani_frame.push(frame);
+        }
+        this.teacher_animation = cc.Animation.create(this.teacher_ani_frame , .2);
+        this.animate = cc.Animate.create(this.teacher_animation);
+        this.teacher = cc.Sprite.createWithTexture(res.teacher_dance,cc.rect(0,0,100,100));
+        this.teacher.attr({x:700, y:500});
+        this.runningaction = cc.RepeatForever.create(this.animate);
+        this.teacher.runAction(this.runningaction);
+        this.addChild(this.teacher);
+;        //enables keyboard input
         this.isKeyboardEnabled = true;
-        console.log("works");
         cc.eventManager.addListener({
             event: cc.EventListener.KEYBOARD,
             onKeyPressed:function(key,event){
@@ -254,7 +279,6 @@ var HelloWorldLayer = cc.Layer.extend({
                 target.handleKeys(key);
             }
         },this);
-        console.log("herh");
         this.scheduleUpdate();
     },
     handleKeys:function(key){
@@ -263,7 +287,6 @@ var HelloWorldLayer = cc.Layer.extend({
             //w key
             case 87:
                 this.ddr_w_map[0].testing();
-                this.ddr_w_map.pop();
                 break;
             //d key
             case 68:
