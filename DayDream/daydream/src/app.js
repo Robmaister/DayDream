@@ -204,6 +204,7 @@ var DDRMAP = cc.TMXTiledMap.extend({
 })
 var HelloWorldLayer = cc.Layer.extend({
     sprite:null,
+    player:null,
     ctor:function () {
         //////////////////////////////
         // 1. super init first
@@ -238,6 +239,9 @@ var HelloWorldLayer = cc.Layer.extend({
         temp = new Base_icon(4, 400,10);
         this.addChild(temp);
 
+        this.player = cc.Sprite.create(res.student_dance);
+        this.player.setPosition(cc.p(420,100));
+        this.addChild(this.player);
         //enables keyboard input
         this.isKeyboardEnabled = true;
         console.log("works");
@@ -250,7 +254,8 @@ var HelloWorldLayer = cc.Layer.extend({
                 target.handleKeys(key);
             }
         },this);
-
+        console.log("herh");
+        this.scheduleUpdate();
     },
     handleKeys:function(key){
         console.log("%d he key", key);
