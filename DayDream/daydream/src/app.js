@@ -262,7 +262,7 @@ var HelloWorldLayer = cc.Layer.extend({
         this.player_animation = cc.Animation.create(this.player_anim_frame , .2);
         this.animate = cc.Animate.create(this.player_animation);
         this.sprite = cc.Sprite.createWithTexture(res.student_dance,cc.rect(0,0,100,100));
-        this.sprite.attr({x:600, y:500});
+        this.sprite.attr({x:900, y:500});
         this.runningaction = cc.RepeatForever.create(this.animate);
         this.sprite.runAction(this.runningaction);
         this.addChild(this.sprite);
@@ -276,7 +276,7 @@ var HelloWorldLayer = cc.Layer.extend({
         this.teacher_animation = cc.Animation.create(this.teacher_ani_frame , .2);
         this.animate = cc.Animate.create(this.teacher_animation);
         this.teacher = cc.Sprite.createWithTexture(res.teacher_dance,cc.rect(0,0,100,100));
-        this.teacher.attr({x:700, y:500});
+        this.teacher.attr({x:1000, y:500});
         this.runningaction = cc.RepeatForever.create(this.animate);
         this.teacher.runAction(this.runningaction);
         this.addChild(this.teacher);
