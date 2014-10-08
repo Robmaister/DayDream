@@ -290,6 +290,7 @@ var HelloWorldLayer = cc.Layer.extend({
                 target.handleKeys(key);
             }
         },this);
+        this.game_time = 0;
         this.scheduleUpdate();
 		
 		
@@ -306,6 +307,13 @@ var HelloWorldLayer = cc.Layer.extend({
 		
 		
 		
+    },
+    update:function(){
+        this.game_time +=1;
+        if ( (this.game_time % 1000) == 0){
+            this.prevScene.ddrWon();
+            cc.director.popScene();
+        }
     },
     handleKeys:function(key){
         console.log("%d he key", key);

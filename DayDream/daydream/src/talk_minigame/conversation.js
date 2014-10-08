@@ -28,7 +28,10 @@ var newtalk1 = cc.Layer.extend({
 		
 		
 		
-		
+		//create background
+		this.background_img = new backdrop();
+		this.addChild(this.background_img);
+		console.log("initializing");
 		
 		//storing first conversation
 		this.monologue_first =[
@@ -170,10 +173,7 @@ var newtalk1 = cc.Layer.extend({
 		button.setTouchEnabled(true);
 		button.addTouchEventListener (this.touchEvent,this);
 		this.addChild(button);
-		//create background
-		this.background_img = new backdrop();
-		this.addChild(this.background_img);
-
+		
 	},
 	Butler_info:function(sender,type){
 		//make button before unseen and create background
@@ -377,6 +377,8 @@ var newtalk1 = cc.Layer.extend({
 				}
 				//game is over
 				if (this.butler_criminal_counter == 7){
+					this.prevScene.conversationWon();
+					cc.director.popScene();
 					console.log("GAME OVER ");
 				}else{
 					button.addTouchEventListener (this.Butler_evil,this);
@@ -416,6 +418,8 @@ var newtalk1 = cc.Layer.extend({
 					this.addChild(sprite);
 				}
 				if (this.mom_criminal_counter == 9){
+					this.prevScene.conversationWon();
+					cc.director.popScene();
 					console.log("GAME OVER ");
 				}else{
 					button.addTouchEventListener (this.Mom_killer,this);
@@ -459,6 +463,9 @@ var newtalk1 = cc.Layer.extend({
 					this.addChild(rightsprite);
 				}
 				if (this.son_criminal_counter == 12){
+					//this.prevScene.conversationWon();
+					this.prevScene.conversationLost();
+					cc.director.popScene();
 					console.log("GAME OVER ");
 				}else{
 					button.addTouchEventListener (this.Son_killer,this);
