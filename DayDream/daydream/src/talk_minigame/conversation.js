@@ -31,7 +31,10 @@ var newtalk1 = cc.Layer.extend({
 		
 		
 		
-		
+		//create background
+		this.background_img = new backdrop();
+		this.addChild(this.background_img);
+		console.log("initializing");
 		
 		//storing first conversation
 		this.monologue_first =[
@@ -173,10 +176,7 @@ var newtalk1 = cc.Layer.extend({
 		button.setTouchEnabled(true);
 		button.addTouchEventListener (this.touchEvent,this);
 		this.addChild(button);
-		//create background
-		this.background_img = new backdrop();
-		this.addChild(this.background_img);
-
+		
 	},
 	Butler_info:function(sender,type){
 		//make button before unseen and create background
@@ -464,7 +464,7 @@ var newtalk1 = cc.Layer.extend({
 					this.addChild(rightsprite);
 				}
 				if (this.son_criminal_counter == 12){
-					this.prevScene.conversationWon();
+					this.prevScene.conversationLost();
 					cc.director.popToSceneStackLevel(2);
 				}else{
 					button.addTouchEventListener (this.Son_killer,this);
