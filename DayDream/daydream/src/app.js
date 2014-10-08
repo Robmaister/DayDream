@@ -311,7 +311,7 @@ var HelloWorldLayer = cc.Layer.extend({
     },
     update:function(){
         this.game_time +=1;
-        if ( (this.game_time % 1000) == 0){
+        if ( (this.game_time % 1500) == 0){
             this.prevScene.ddrWon();
             cc.director.popScene();
         }
