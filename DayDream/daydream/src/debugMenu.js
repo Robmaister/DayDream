@@ -5,13 +5,6 @@ var DebugMenuLayer = cc.Layer.extend({
 		
 		menuArray = ["Play!"];
 		
-		/*var listView = new ccui.ListView();
-		
-		listView.setDirection(ccui.ScrollVeiew.DIR_VERTICAL);
-		listView.setTouchEnabled(true);
-		listView.setBounceEnabled(true);
-		listView.addEventListener(this.selectItemEvent, this);*/
-		
 		var winSize = cc.director.getWinSize();
 		
 		var penX = winSize.width / 2;
