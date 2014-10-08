@@ -463,7 +463,7 @@ var newtalk1 = cc.Layer.extend({
 					this.addChild(rightsprite);
 				}
 				if (this.son_criminal_counter == 12){
-					this.prevScene.Won();
+					this.prevScene.conversationWon();
 					cc.director.popToSceneStackLevel(2);
 				}else{
 					button.addTouchEventListener (this.Son_killer,this);
