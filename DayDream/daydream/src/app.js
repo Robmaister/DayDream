@@ -343,6 +343,10 @@ var HelloWorldLayer = cc.Layer.extend({
 
 var HelloWorldScene = cc.Scene.extend({
 	prevScene: null,
+	ctor:function(prevScene) {
+		this._super();
+		this.prevScene = prevScene;
+	},
     onEnter:function () {
         this._super();
         var layer = new HelloWorldLayer(this.prevScene);

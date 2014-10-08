@@ -51,10 +51,23 @@ var OverworldBackgroundLayer = cc.Layer.extend({
 		var mapDesks = map.getObjectGroup("Objects").getObjects();
 		for (var i = 0; i < mapDesks.length; i++) {
 			var di = mapDesks[i];
-			if (di.name != "Desk")
+			var resVal = null;
+			if (di.name == "Desk") {
+				resVal = res.sprite_desk;
+			}
+			else if (di.name == "Teacher") {
+				resVal = res.sprite_teacher;
+			}
+			else if (di.name == "Student0") {
+				resVal = res.sprite_student0;
+			}
+			else if (di.name == "Student1") {
+				resVal = res.sprite_student1;
+			}
+			else
 				continue;
-			
-			var ds = cc.Sprite.create(res.sprite_desk);
+				
+			var ds = cc.Sprite.create(resVal);
 			var contentSize = ds.getContentSize();
 			var dps = new cp.BoxShape(phys.staticBody, contentSize.width, contentSize.height);
 			dps.body.setAngle(di.rotation * Math.PI / 180.0);
