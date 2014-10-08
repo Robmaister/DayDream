@@ -12,14 +12,17 @@ var backdrop = cc.Sprite.extend({
 })
 var newtalk1 = cc.Layer.extend({
 	prevScene: null,
+	ctor:function(prevScene) {
+		this._super();
+		this.prevScene = prevScene;
+	},
     onEnter:function() {
 		this._super();
 		
 		
 		
 		//WHEN THIS MINIGAME IS WON, CALL THIS:
-		//this.prevScene.conversationWon();
-		//cc.director.popScene();
+		//
 		//
 		//OR IF YOU LOSE, CALL THIS:
 		//this.prevScene.conversationLost();
@@ -377,7 +380,8 @@ var newtalk1 = cc.Layer.extend({
 				}
 				//game is over
 				if (this.butler_criminal_counter == 7){
-					console.log("GAME OVER ");
+					this.prevScene.conversationWon();
+					cc.director.popToSceneStackLevel(2);
 				}else{
 					button.addTouchEventListener (this.Butler_evil,this);
 					
@@ -416,7 +420,8 @@ var newtalk1 = cc.Layer.extend({
 					this.addChild(sprite);
 				}
 				if (this.mom_criminal_counter == 9){
-					console.log("GAME OVER ");
+					this.prevScene.conversationWon();
+					cc.director.popToSceneStackLevel(2);
 				}else{
 					button.addTouchEventListener (this.Mom_killer,this);
 					
@@ -459,7 +464,8 @@ var newtalk1 = cc.Layer.extend({
 					this.addChild(rightsprite);
 				}
 				if (this.son_criminal_counter == 12){
-					console.log("GAME OVER ");
+					this.prevScene.conversationWon();
+					cc.director.popToSceneStackLevel(2);
 				}else{
 					button.addTouchEventListener (this.Son_killer,this);
 					
@@ -600,10 +606,13 @@ var newtalk1 = cc.Layer.extend({
 
 var ConversationScene = cc.Scene.extend({
 	prevScene: null,
+	ctor:function(prevScene) {
+		this._super();
+		this.prevScene = prevScene;
+	},
     onEnter:function () {
         this._super();
-        var layer = new newtalk1();
-		layer.prevScene = this.prevScene;
+        var layer = new newtalk1(this.prevScene);
         this.addChild(layer);
     }
 });

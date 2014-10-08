@@ -57,7 +57,6 @@ var OverworldBackgroundLayer = cc.Layer.extend({
 			var ds = cc.Sprite.create(res.sprite_desk);
 			var contentSize = ds.getContentSize();
 			var dps = new cp.BoxShape(phys.staticBody, contentSize.width, contentSize.height);
-			cc.log(di.rotation);
 			dps.body.setAngle(di.rotation * Math.PI / 180.0);
 			ds.setRotation(di.rotation/* * Math.PI / 180.0*/);
 			dps.body.p = cp.v(di.x, di.y);
@@ -83,10 +82,14 @@ var OverworldMainLayer = cc.Layer.extend({
 	playerSpeed: 500,
 	playerBody: null,
 	playerShape: null,
+	playerWalkAnim: null,
+	playerWalkAction: null,
 	camPos: null,
 	camMin: null,
 	camMax: null,
 	moving: [false, false, false, false],
+	wonConversation: false,
+	wonDDR: false,
 	ctor:function(phys) {
 		this._super();
 
@@ -125,6 +128,14 @@ var OverworldMainLayer = cc.Layer.extend({
 		this.phys.addShape(this.playerShape);
 		this.player.setBody(this.playerBody);
 		
+        var playerWalkFrames = [];
+        for (var i = 0; i < 5 ; i++){
+            var frame = cc.SpriteFrame.createWithTexture(res.student_walk, cc.rect((i * 100), 0, 100, 75)); 
+            playerWalkFrames.push(frame);
+        }
+		this.playerWalkAnim = cc.Animation.create(this.playerWalkFrames);
+		this.playerWalkAction = cc.RepeatForever.create(cc.Animate.create(this.playerWalkAnim));
+		
 		this.addChild(this.player);
 		
 		this.camMin = cc.p(0, 0);
@@ -148,21 +159,35 @@ var OverworldMainLayer = cc.Layer.extend({
 		this.playerBody.vx = this.playerBody.vy = 0;
 		this.playerBody.w = 0;
 		
+		var moveAnim = false;
 		if (this.moving[0]) {
+			moveAnim = true;
 			this.playerBody.applyImpulse(cp.v(0, this.playerSpeed), cp.v(0, 0));
 			this.playerBody.setAngle(Math.PI);
 		}
 		if (this.moving[1]) {
+		moveAnim = true;
 			this.playerBody.applyImpulse(cp.v(-this.playerSpeed, 0), cp.v(0, 0));
 			this.playerBody.setAngle(3.0 * Math.PI / 2.0);
 		}
 		if (this.moving[2]) {
+			moveAnim = true;
 			this.playerBody.applyImpulse(cp.v(0, -this.playerSpeed), cp.v(0, 0));
 			this.playerBody.setAngle(0);
 		}
 		if (this.moving[3]) {
+			moveAnim = true;
 			this.playerBody.applyImpulse(cp.v(this.playerSpeed, 0), cp.v(0, 0));
 			this.playerBody.setAngle(Math.PI / 2.0);
+		}
+		
+		if (moveAnim) {
+			if (this.player.getNumberOfRunningActions() == 0) {
+				this.player.runAction(this.playerWalkAction);
+			}
+		}
+		else if (this.player.getNumberOfRunningActions() == 1) {
+			this.player.stopAction(this.playerWalkAction);
 		}
 		
 		for (var i = 0; i < bgLayer.triggers.length; i++) {
@@ -170,12 +195,11 @@ var OverworldMainLayer = cc.Layer.extend({
 			if (cc.rectContainsPoint(ti.rect, this.playerBody.p)) {
 				var newScene = null;
 				switch (ti.name) {
-					case "English": newScene = new ConversationScene(); break;
-					case "Spanish": newScene = new HelloWorldScene(); break;
+					case "English": if (!this.wonConversation) newScene = new ConversationScene(this); break;
+					case "Spanish": if (!this.wonDDR) newScene = new HelloWorldScene(this); break;
 				}
 				
 				if (newScene != null) {
-					newScene.prevScene = this.getParent();
 					var trans = new cc.TransitionCrossFade(1, newScene, cc.color(0, 0, 0));
 					cc.director.pushScene(trans);
 				}
@@ -206,6 +230,19 @@ var OverworldMainLayer = cc.Layer.extend({
 			return this.player.getPosition();
 		}
 	},
+	conversationWon:function() {
+		cc.log("CONVERSATION WON"); //TODO pipe these back into variables
+		this.wonConversation = true;
+	},
+	conversationLost:function() {
+		cc.log("CONVERSATION LOST");
+	},
+	ddrWon:function() {
+		cc.log("DDR WON");
+	},
+	ddrLost:function() {
+		cc.log("DDR LOST");
+	}
 });
 
 var OverworldHudLayer = cc.Layer.extend({
@@ -238,16 +275,4 @@ var OverworldScene = cc.Scene.extend({
 	update:function (dt) {
 		
 	},
-	conversationWon:function() {
-		cc.log("CONVERSATION WON"); //TODO pipe these back into variables
-	},
-	conversationLost:function() {
-		cc.log("CONVERSATION LOST");
-	},
-	ddrWon:function() {
-		cc.log("DDR WON");
-	},
-	ddrLost:function() {
-		cc.log("DDR LOST");
-	}
 });

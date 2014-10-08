@@ -16,8 +16,9 @@ var res = {
      s_outline: "res/DDR_outline_S.png",
      d_outline: "res/DDR_outline_D.png",
 
-     speech_bubble : "res/speech_bubble.png",
-     student_dance : "res/StudentDance.png",
+     speech_bubble: "res/speech_bubble.png",
+     student_dance: "res/StudentDance.png",
+	 student_walk: "res/StudentWalk.png",
      salsa_music: "res/Salsa_Music.mp3",
      cocosui_btn: "res/cocosui/button.png",
      cocosui_btn_highlight :"res/cocosui/buttonHighlighted.png",
