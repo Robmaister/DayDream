@@ -236,12 +236,15 @@ var OverworldMainLayer = cc.Layer.extend({
 	},
 	conversationLost:function() {
 		cc.log("CONVERSATION LOST");
+		this.wonConversation = true;
 	},
 	ddrWon:function() {
 		cc.log("DDR WON");
+		this.wonDDR = true;
 	},
 	ddrLost:function() {
 		cc.log("DDR LOST");
+		this.wonDDR = true;
 	}
 });
 
@@ -256,9 +259,8 @@ var OverworldHudLayer = cc.Layer.extend({
 });
 
 var OverworldScene = cc.Scene.extend({
-	onEnter:function() {
+	ctor:function() {
 		this._super();
-		
 		phys = new cp.Space();
 		phys.collisionBias = Math.pow(1 - 0.4, 60); //handle 40% of overlap instead of 10% - can't escape map now.
 		
@@ -267,8 +269,11 @@ var OverworldScene = cc.Scene.extend({
 		this.gameLayer.addChild(new OverworldBackgroundLayer(phys), 0, c_overworldLayerTag.background);
 		this.gameLayer.addChild(new OverworldMainLayer(phys), 0, c_overworldLayerTag.main);
 		this.gameLayer.addChild(new OverworldHudLayer(), 0, c_overworldLayerTag.hud);
+	},
+	onEnter:function() {
+		this._super();
 		
-		//this.addChild(this.gameLayer);
+		
 		
 		//this.scheduleUpdate();
 	},
