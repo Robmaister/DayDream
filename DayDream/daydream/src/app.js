@@ -221,10 +221,11 @@ var HelloWorldLayer = cc.Layer.extend({
         this.ddr_a_map = [];
         this.ddr_d_map = [];
         //making background images
-        var bg = new cc.Sprite(res.salsa_bg);
-        bg.attr({x:600,y:0});
-        bg.setScale(1.5);
-        this.addChild(bg);
+        var winsize = cc.director.getWinSize();
+        var centerpos = cc.p(winsize.width / 2, winsize.height / 2);
+        BG = new cc.Sprite.create(res.salsa_bg);
+        BG.setPosition(centerpos);
+        this.addChild(BG);
         //Pass the maps in and then add them as children
         this.tilemap = new DDRMAP(this.ddr_w_map,this.ddr_s_map,this.ddr_a_map,this.ddr_d_map);
         for (var l = 0; l < this.ddr_w_map.length ; l ++){
