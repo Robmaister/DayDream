@@ -28,22 +28,23 @@ var OverworldBackgroundLayer = cc.Layer.extend({
 		var tileWidth = map.getTileSize().width;
 		var tileHeight = map.getTileSize().height;
 		var wallLayer = map.getLayer("Walls");
-		wallLayer.visible = false;
+		//wallLayer.visible = false;
 		
 		var verts = [
 			-tileWidth/2, -tileHeight/2,
-			-tileWidth/2, tileHeight/2,
-			tileWidth/2, tileHeight/2,
-			tileWidth/2, -tileHeight/2
+			-tileWidth/2,  tileHeight/2,
+			 tileWidth/2,  tileHeight/2,
+			 tileWidth/2, -tileHeight/2
 		];
 		
 		for (var i = 0; i < mapWidth; i++) {
 			for (var j = 0; j < mapHeight; j++) {
 				var tileCoord = cc.p(i, j);
 				var gid = wallLayer.getTileGIDAt(tileCoord);
-				if (gid) {
-					var box = new cp.PolyShape(phys.staticBody, verts, cp.v(i * tileWidth, j * tileHeight));
+				if (gid != 0) {
+					var box = new cp.PolyShape(phys.staticBody, verts, cp.v(i * tileWidth, this.mapHeight - j * tileHeight));
 					phys.addStaticShape(box);
+					cc.log("found colliding wall (" + i + ", " + j + ")");
 				}
 			}
 		}
@@ -53,6 +54,9 @@ var OverworldBackgroundLayer = cc.Layer.extend({
 var OverworldMainLayer = cc.Layer.extend({
 	phys: null,
 	player: null,
+	playerSpeed: 500,
+	playerBody: null,
+	playerShape: null,
 	camPos: null,
 	camMin: null,
 	camMax: null,
@@ -85,8 +89,17 @@ var OverworldMainLayer = cc.Layer.extend({
 		
 		this.phys = phys;
 		
-		this.player = cc.Sprite.create(res.sprite_student);
-		this.player.setPosition(cc.p(420, 2250));
+		this.player = new cc.PhysicsSprite(res.sprite_student);
+		var contentSize = this.player.getContentSize();
+		this.playerBody = new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));
+		this.playerBody.p = cc.p(420, 2250);
+		this.phys.addBody(this.playerBody);
+		
+		this.playerShape = new cp.BoxShape(this.playerBody, contentSize.width, contentSize.height);
+		this.phys.addShape(this.playerShape);
+		
+		this.player.setBody(this.playerBody);
+		
 		this.addChild(this.player);
 		
 		this.camMin = cc.p(0, 0);
@@ -106,14 +119,19 @@ var OverworldMainLayer = cc.Layer.extend({
 		pos.y -= winSize.height/2;
 		this.camPos = cc.pClamp(pos, this.camMin, this.camMax);
 		this.setPosition(cc.p(-this.camPos.x, -this.camPos.y));
+		
+		this.playerBody.vx = 0;
+		this.playerBody.vy = 0;
+		this.playerBody.w = 0;
+		
 		if (this.moving[0])
-			cc.log("moving up!");
-		else if (this.moving[1])
-			cc.log("moving left!");
-		else if (this.moving[2])
-			cc.log("moving down!");
-		else if (this.moving[3])
-			cc.log("moving right!");
+			this.playerBody.applyImpulse(cp.v(0, this.playerSpeed), cp.v(0, 0));
+		if (this.moving[1])
+			this.playerBody.applyImpulse(cp.v(-this.playerSpeed, 0), cp.v(0, 0));
+		if (this.moving[2])
+			this.playerBody.applyImpulse(cp.v(0, -this.playerSpeed), cp.v(0, 0));
+		if (this.moving[3])
+			this.playerBody.applyImpulse(cp.v(this.playerSpeed, 0), cp.v(0, 0));
 	},
 	onKeyDown:function(e) {
 		switch (e) {
