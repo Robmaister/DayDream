@@ -1,19 +1,16 @@
 //sprite class for the icons at the button for timing
 var Base_icon = cc.Sprite.extend({
     ctor:function(spite_img, posx,posy){
-        console.log("before img");
         if (spite_img == 1){
-            this._super(res.proto_w);
+            this._super(res.w_button);
         }else if (spite_img == 2){
-            this._super(res.proto_a);
+            this._super(res.a_button);
         }else if (spite_img == 3){
-            this._super(res.proto_s);
+            this._super(res.s_button);
         }else{
-            this._super(res.proto_d);
+            this._super(res.d_button);
         }
-        
-        console.log("after img");
-        this.setScale(.25);
+        this.setScale(.20);
         this.setAnchorPoint(0,0);
         this.setPosition(posx,posy);
     }
@@ -21,10 +18,10 @@ var Base_icon = cc.Sprite.extend({
 //individula objects for each of the icons
 var W_icon = cc.Sprite.extend({
     ctor:function(posx, posy){
-        this._super(res.proto_w);
-        this.setScale(.25);
+        this._super(res.w_outline);
+        this.setScale(.20);
         this.setAnchorPoint(0,0);
-        this.setPosition(250,posy);
+        this.setPosition(100,posy);
         this.alive = true;
         this.isKeyboardEnabled = true;
         this.timer = 0;
@@ -33,7 +30,7 @@ var W_icon = cc.Sprite.extend({
     },
     update:function(dt){
         this.timer +=1;
-        if ( this.timer % 100 == 0){
+        if ( this.timer % 200 == 0){
             this.rate = 2 * this.rate;
         }
         this.y -= this.rate;
@@ -44,7 +41,7 @@ var W_icon = cc.Sprite.extend({
         //destroy object
         this.alive = false;
         //valid correction box point ++
-        if( this.y < 100 && this.y > 10){
+        if( this.y < 100 && this.y > 0){
             console.log("success");
         }
         this.visible = false;
@@ -55,10 +52,10 @@ var W_icon = cc.Sprite.extend({
 });
 var A_icon = cc.Sprite.extend({
     ctor:function(posx,posy){
-        this._super(res.proto_a);
-        this.setScale(.25);
+        this._super(res.a_outline);
+        this.setScale(.20);
         this.setAnchorPoint(0,0);
-        this.setPosition(400,posy);
+        this.setPosition(200,posy);
         this.alive = true;
         this.isKeyboardEnabled = true;
         this.timer = 0;
@@ -67,7 +64,7 @@ var A_icon = cc.Sprite.extend({
     },
     update:function(dt){
         this.timer +=1;
-        if ( this.timer % 100 == 0){
+        if ( this.timer % 200 == 0){
             this.rate = 2 * this.rate;
         }
         this.y -= this.rate;
@@ -78,7 +75,7 @@ var A_icon = cc.Sprite.extend({
         //destroy object
         this.alive = false;
         //valid correction box point ++
-        if( this.y < 100 && this.y > 10){
+        if( this.y < 100 && this.y > 0){
             console.log("success");
         }
         this.visible = false;
@@ -89,10 +86,10 @@ var A_icon = cc.Sprite.extend({
 });
 var S_icon = cc.Sprite.extend({
     ctor:function(posx,posy){
-        this._super(res.proto_s);
-        this.setScale(.25);
+        this._super(res.s_outline);
+        this.setScale(.20);
         this.setAnchorPoint(0,0);
-        this.setPosition(550,posy);
+        this.setPosition(300,posy);
         this.alive = true;
         this.timer = 0;
         this.rate = .05;
@@ -101,7 +98,7 @@ var S_icon = cc.Sprite.extend({
     },
     update:function(dt){
         this.timer +=1;
-        if ( this.timer % 100 == 0){
+        if ( this.timer % 200 == 0){
             this.rate = 2 * this.rate;
         }
         this.y -= this.rate;
@@ -112,7 +109,7 @@ var S_icon = cc.Sprite.extend({
         //destroy object
         this.alive = false;
         //valid correction box point ++
-        if( this.y < 100 && this.y > 10){
+        if( this.y < 100 && this.y > 0){
             console.log("success");
         }
         this.visible = false;
@@ -124,10 +121,10 @@ var S_icon = cc.Sprite.extend({
 }); 
 var D_icon = cc.Sprite.extend({
     ctor:function(posx,posy){
-        this._super(res.proto_d);
-        this.setScale(.25);
+        this._super(res.d_outline);
+        this.setScale(.20);
         this.setAnchorPoint(0,0);
-        this.setPosition(700, posy);
+        this.setPosition(400, posy);
         this.alive = true;
         this.timer = 0;
         this.rate = .05;
@@ -136,7 +133,7 @@ var D_icon = cc.Sprite.extend({
     },
     update:function(dt){
         this.timer +=1;
-        if ( this.timer % 100 == 0){
+        if ( this.timer % 200 == 0){
             this.rate = 2 * this.rate;
         }
         this.y -= this.rate;
@@ -147,7 +144,7 @@ var D_icon = cc.Sprite.extend({
         //destroy object
         this.alive = false;
         //valid correction box point ++
-        if( this.y < 100 && this.y > 10){
+        if( this.y < 100 && this.y > 0){
             //or play the you got it animation
             console.log("success");
         }
@@ -206,10 +203,14 @@ var DDRMAP = cc.TMXTiledMap.extend({
 })
 var HelloWorldLayer = cc.Layer.extend({
     sprite:null,
+    player:null,
+    teacher:null,
     ctor:function () {
         //////////////////////////////
         // 1. super init first
         this._super();
+        //music
+        cc.audioEngine.playMusic(res.salsa_music,true);
         //creating a map to hold th eobjects for each button
         this.ddr_w_map = [];
         this.ddr_s_map = [];
@@ -230,18 +231,45 @@ var HelloWorldLayer = cc.Layer.extend({
             this.addChild(this.ddr_d_map[d_iter]);
         }
         //Making ht e base images to line up
-        var temp = new Base_icon(1, 250,10);
+        var temp = new Base_icon(1, 100,10);
         this.addChild(temp);
-        temp = new Base_icon(2, 400,10);
+        temp = new Base_icon(2, 200,10);
         this.addChild(temp);
-        temp = new Base_icon(3, 550,10);
+        temp = new Base_icon(3, 300,10);
         this.addChild(temp);
-        temp = new Base_icon(4, 700,10);
+        temp = new Base_icon(4, 400,10);
         this.addChild(temp);
 
-        //enables keyboard input
+        //Createing/ animating the player dancing
+        this.player_animation = cc.Animation.create();
+        this.player_anim_frame = [];
+        for (var i = 0; i < 4 ; i++){
+            var frame = cc.SpriteFrame.createWithTexture(res.student_dance, cc.rect((i *100 ),0 ,100,100)); 
+            this.player_anim_frame.push(frame);
+        }
+        this.player_animation = cc.Animation.create(this.player_anim_frame , .2);
+        this.animate = cc.Animate.create(this.player_animation);
+        this.sprite = cc.Sprite.createWithTexture(res.student_dance,cc.rect(0,0,100,100));
+        this.sprite.attr({x:600, y:500});
+        this.runningaction = cc.RepeatForever.create(this.animate);
+        this.sprite.runAction(this.runningaction);
+        this.addChild(this.sprite);
+        //Making the teacher dance
+        this.teacher_animation = cc.Animation.create();
+        this.teacher_ani_frame = [];
+        for (var i = 0; i < 4 ; i++){
+            var frame = cc.SpriteFrame.createWithTexture(res.teacher_dance, cc.rect((i *100 ),0 ,100,100)); 
+            this.teacher_ani_frame.push(frame);
+        }
+        this.teacher_animation = cc.Animation.create(this.teacher_ani_frame , .2);
+        this.animate = cc.Animate.create(this.teacher_animation);
+        this.teacher = cc.Sprite.createWithTexture(res.teacher_dance,cc.rect(0,0,100,100));
+        this.teacher.attr({x:700, y:500});
+        this.runningaction = cc.RepeatForever.create(this.animate);
+        this.teacher.runAction(this.runningaction);
+        this.addChild(this.teacher);
+;        //enables keyboard input
         this.isKeyboardEnabled = true;
-        console.log("works");
         cc.eventManager.addListener({
             event: cc.EventListener.KEYBOARD,
             onKeyPressed:function(key,event){
@@ -251,7 +279,7 @@ var HelloWorldLayer = cc.Layer.extend({
                 target.handleKeys(key);
             }
         },this);
-
+        this.scheduleUpdate();
     },
     handleKeys:function(key){
         console.log("%d he key", key);
@@ -259,7 +287,6 @@ var HelloWorldLayer = cc.Layer.extend({
             //w key
             case 87:
                 this.ddr_w_map[0].testing();
-                this.ddr_w_map.pop();
                 break;
             //d key
             case 68:
@@ -284,6 +311,7 @@ var HelloWorldScene = cc.Scene.extend({
         this._super();
         var layer = new HelloWorldLayer();
         this.addChild(layer);
-
+        //var talk_minigame = new newtalk1();
+        //this.addChild(talk_minigame);
     }
 });

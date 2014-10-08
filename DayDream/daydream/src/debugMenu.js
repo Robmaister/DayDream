@@ -3,7 +3,7 @@ var DebugMenuLayer = cc.Layer.extend({
 	ctor:function() {
 		this._super();
 		
-		menuArray = ["Overworld", "DDR Minigame"];
+		menuArray = ["Overworld", "DDR Minigame","english class"];
 		
 		/*var listView = new ccui.ListView();
 		
@@ -43,6 +43,9 @@ var DebugMenuLayer = cc.Layer.extend({
 						break;
 					case "DDR Minigame":
 						newScene = new HelloWorldScene();
+						break;
+					case "english class":
+						newScene = new ConversationScene();
 						break;
 				}
 				

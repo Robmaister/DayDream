@@ -12,17 +12,35 @@
   <object x="-3.0303" y="1503.03" width="36.3636" height="33.3333"/>
   <object x="0" y="1181.82" width="27.2727" height="30.303"/>
   <object x="3.0303" y="733.333" width="27.2727" height="30.303"/>
+  <object x="0" y="1027.27" width="30.303" height="24.2424"/>
+  <object x="-3.0303" y="663.636" width="24.2424" height="30.303"/>
+  <object x="-3.0303" y="530.303" width="36.3636" height="27.2727"/>
+  <object x="6.06061" y="133.333" width="27.2727" height="42.4242"/>
+  <object x="0" y="251.515" width="30.303" height="33.3333"/>
  </objectgroup>
  <objectgroup name="a_key">
-  <object x="57.5758" y="1506.06" width="39.3939" height="36.3636"/>
+  <object x="57.5758" y="1430.3" width="39.3939" height="36.3636"/>
   <object x="51.5152" y="421.212" width="39.3939" height="27.2727"/>
+  <object x="48.4848" y="1293.94" width="42.4242" height="18.1818"/>
+  <object x="60.6061" y="1090.91" width="33.3333" height="33.3333"/>
+  <object x="72.7273" y="884.848" width="27.2727" height="24.2424"/>
+  <object x="63.6364" y="318.182" width="21.2121" height="42.4242"/>
  </objectgroup>
  <objectgroup name="s_key">
-  <object x="163.636" y="1506.06" width="21.2121" height="21.2121"/>
+  <object x="151.636" y="1392.06" width="21.2121" height="21.2121"/>
   <object x="196.97" y="436.364" width="33.3333" height="36.3636"/>
+  <object x="266.667" y="1251.52" width="39.3939" height="21.2121"/>
+  <object x="281.818" y="951.515" width="33.3333" height="45.4545"/>
+  <object x="281.818" y="630.303" width="36.3636" height="30.303"/>
+  <object x="284.848" y="266.667" width="36.3636" height="51.5152"/>
+  <object x="300" y="72.7273" width="30.303" height="36.3636"/>
  </objectgroup>
  <objectgroup name="d_key">
-  <object x="275.758" y="1496.97" width="30.303" height="33.3333"/>
+  <object x="266.667" y="1354.55" width="30.303" height="30.303"/>
   <object x="300" y="500" width="27.2727" height="33.3333"/>
+  <object x="182" y="974" width="28" height="30"/>
+  <object x="152" y="768" width="28" height="28"/>
+  <object x="168" y="540" width="22" height="24"/>
+  <object x="176" y="164" width="44" height="46"/>
  </objectgroup>
 </map>

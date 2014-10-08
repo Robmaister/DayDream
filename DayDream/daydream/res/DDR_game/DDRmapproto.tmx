@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tmw_desert_spacing" tilewidth="32" tileheight="32">
+  <image source="../../../../../../../Program Files (x86)/Tiled/examples/tmw_desert_spacing.png" width="265" height="199"/>
+ </tileset>
+ <tileset firstgid="49" name="HelloWorld" tilewidth="32" tileheight="32">
+  <image source="HelloWorld.png" width="800" height="450"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJwzZGBgMBzFgwYDABzZEyU=
+  </data>
+ </layer>
+ <objectgroup name="w_key">
+  <object x="4" y="161" width="29" height="27"/>
+  <object x="4" y="68" width="26" height="24"/>
+  <object x="35" y="10" width="27" height="26"/>
+ </objectgroup>
+ <objectgroup name="a_key">
+  <object x="64" y="159" width="31" height="29"/>
+  <object x="67" y="63" width="29" height="31"/>
+ </objectgroup>
+ <objectgroup name="s_key">
+  <object x="131" y="159" width="25" height="25"/>
+  <object x="128" y="108" width="31" height="21"/>
+ </objectgroup>
+ <objectgroup name="d_key">
+  <object x="193" y="155" width="32" height="28"/>
+  <object x="195" y="45" width="32" height="26"/>
+  <object x="197" y="5" width="25" height="19"/>
+ </objectgroup>
+</map>
