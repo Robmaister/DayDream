@@ -42,16 +42,36 @@ var newtalk1 = cc.Layer.extend({
     }
 });
 var Conversation = cc.Layer.extend({
-	sprite:null,
-    ctor:function () {
+	sprite: null,
+	prevScene: null,
+    ctor:function (prevScene) {
     	this._super();
+		this.prevScene = prevScene;
     	var first_conversation = new newtalk1();
+		
+		
+		//WHEN THIS MINIGAME IS WON, CALL THIS:
+		//this.prevScene.conversationWon();
+		//cc.director.popScene();
+		//
+		//OR IF YOU LOSE, CALL THIS:
+		//this.prevScene.conversationLost();
+		//cc.director.popScene();
+		
+		
+		
+		
     }
 });
 var ConversationScene = cc.Scene.extend({
+	prevScene: null,
+	ctor:function(prevScene) {
+		this._super();
+		this.prevScene = prevScene;
+	},
     onEnter:function () {
         this._super();
-        var layer = new Conversation();
+        var layer = new Conversation(this.prevScene);
         this.addChild(layer);
     }
 });

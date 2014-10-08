@@ -22,7 +22,8 @@ var res = {
      cocosui_btn: "res/cocosui/button.png",
      cocosui_btn_highlight :"res/cocosui/buttonHighlighted.png",
      map_overworld_0: "res/overworld/map_0.tmx",
-     map_overworld_png: "res/overworld/map_0.tmx",
+     map_overworld_png: "res/overworld/map.png",
+	 sprite_desk: "res/overworld/desk.png",
      sprite_student: "res/StudentSpriteStill.png",
      teacher_dance: "res/TeacherDance.png"
 };

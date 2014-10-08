@@ -205,10 +205,12 @@ var HelloWorldLayer = cc.Layer.extend({
     sprite:null,
     player:null,
     teacher:null,
-    ctor:function () {
+	prevScene: null,
+    ctor:function (prevScene) {
         //////////////////////////////
         // 1. super init first
         this._super();
+		this.prevScene = prevScene;
         //music
         cc.audioEngine.playMusic(res.salsa_music,true);
         //creating a map to hold th eobjects for each button
@@ -280,6 +282,21 @@ var HelloWorldLayer = cc.Layer.extend({
             }
         },this);
         this.scheduleUpdate();
+		
+		
+		
+		
+		//WHEN THIS MINIGAME IS WON, CALL THIS:
+		//this.prevScene.ddrWon();
+		//cc.director.popScene();
+		//
+		//OR IF YOU LOSE, CALL THIS:
+		//this.prevScene.ddrLost();
+		//cc.director.popScene();
+		
+		
+		
+		
     },
     handleKeys:function(key){
         console.log("%d he key", key);
@@ -307,9 +324,14 @@ var HelloWorldLayer = cc.Layer.extend({
 });
 
 var HelloWorldScene = cc.Scene.extend({
+	prevScene: null,
+	ctor: function(prevScene) {
+		this._super();
+		this.prevScene = prevScene;
+	},
     onEnter:function () {
         this._super();
-        var layer = new HelloWorldLayer();
+        var layer = new HelloWorldLayer(this.prevScene);
         this.addChild(layer);
         //var talk_minigame = new newtalk1();
         //this.addChild(talk_minigame);

@@ -3,6 +3,7 @@ var OverworldBackgroundLayer = cc.Layer.extend({
 	mapWidth: 0,
 	mapHeight: 0,
 	mapIndex: 0,
+	triggers: [],
 	ctor:function(phys) {
 		this._super();
 		
@@ -13,13 +14,15 @@ var OverworldBackgroundLayer = cc.Layer.extend({
 		this.mapHeight = this.map_0.getContentSize().height;
 		
 		this.initWalls(phys);
+		this.initDesks(phys);
+		this.initTriggers(phys);
 		
 		this.scheduleUpdate();
 	},
 	update:function(dt) {
 		var mainLayer = this.getParent().getChildByTag(c_overworldLayerTag.main);
 		var pos = mainLayer.camPos;
-		this.setPosition(cc.p(-pos.x, -pos.y));
+		this.setPosition(cc.p(-pos.x - 32, -pos.y + 32));
 	},
 	initWalls:function(phys) {
 		var map = this.map_0;
@@ -28,25 +31,48 @@ var OverworldBackgroundLayer = cc.Layer.extend({
 		var tileWidth = map.getTileSize().width;
 		var tileHeight = map.getTileSize().height;
 		var wallLayer = map.getLayer("Walls");
-		//wallLayer.visible = false;
-		
-		var verts = [
-			-tileWidth/2, -tileHeight/2,
-			-tileWidth/2,  tileHeight/2,
-			 tileWidth/2,  tileHeight/2,
-			 tileWidth/2, -tileHeight/2
-		];
+		wallLayer.visible = false;
 		
 		for (var i = 0; i < mapWidth; i++) {
 			for (var j = 0; j < mapHeight; j++) {
 				var tileCoord = cc.p(i, j);
 				var gid = wallLayer.getTileGIDAt(tileCoord);
 				if (gid != 0) {
-					var box = new cp.PolyShape(phys.staticBody, verts, cp.v(i * tileWidth, this.mapHeight - j * tileHeight));
+					//var box = new cp.PolyShape(phys.staticBody, verts, cp.v(i * tileWidth, this.mapHeight - j * tileHeight));
+					var box = new cp.BoxShape(phys.staticBody, tileWidth, tileHeight);
+					box.body.p = cp.v(i * tileWidth, this.mapHeight - j * tileHeight);
 					phys.addStaticShape(box);
-					cc.log("found colliding wall (" + i + ", " + j + ")");
 				}
 			}
+		}
+	},
+	initDesks:function(phys) {
+		var map = this.map_0;
+		var mapDesks = map.getObjectGroup("Objects").getObjects();
+		for (var i = 0; i < mapDesks.length; i++) {
+			var di = mapDesks[i];
+			if (di.name != "Desk")
+				continue;
+			
+			var ds = cc.Sprite.create(res.sprite_desk);
+			var contentSize = ds.getContentSize();
+			var dps = new cp.BoxShape(phys.staticBody, contentSize.width, contentSize.height);
+			cc.log(di.rotation);
+			dps.body.setAngle(di.rotation * Math.PI / 180.0);
+			ds.setRotation(di.rotation/* * Math.PI / 180.0*/);
+			dps.body.p = cp.v(di.x, di.y);
+			ds.setPosition(cc.p(di.x, di.y));
+			
+			phys.addStaticShape(dps);
+			this.addChild(ds);
+		}
+	},
+	initTriggers:function(phys) {
+		var map = this.map_0;
+		var mapTrigs = map.getObjectGroup("Triggers").getObjects();
+		for (var i = 0; i < mapTrigs.length; i++) {
+			var mi = mapTrigs[i];
+			this.triggers.push({name: mi.name, rect: cc.rect(mi.x, mi.y, mi.width, mi.height)})
 		}
 	},
 });
@@ -97,7 +123,6 @@ var OverworldMainLayer = cc.Layer.extend({
 		
 		this.playerShape = new cp.BoxShape(this.playerBody, contentSize.width, contentSize.height);
 		this.phys.addShape(this.playerShape);
-		
 		this.player.setBody(this.playerBody);
 		
 		this.addChild(this.player);
@@ -120,18 +145,41 @@ var OverworldMainLayer = cc.Layer.extend({
 		this.camPos = cc.pClamp(pos, this.camMin, this.camMax);
 		this.setPosition(cc.p(-this.camPos.x, -this.camPos.y));
 		
-		this.playerBody.vx = 0;
-		this.playerBody.vy = 0;
+		this.playerBody.vx = this.playerBody.vy = 0;
 		this.playerBody.w = 0;
 		
-		if (this.moving[0])
+		if (this.moving[0]) {
 			this.playerBody.applyImpulse(cp.v(0, this.playerSpeed), cp.v(0, 0));
-		if (this.moving[1])
+			this.playerBody.setAngle(Math.PI);
+		}
+		if (this.moving[1]) {
 			this.playerBody.applyImpulse(cp.v(-this.playerSpeed, 0), cp.v(0, 0));
-		if (this.moving[2])
+			this.playerBody.setAngle(3.0 * Math.PI / 2.0);
+		}
+		if (this.moving[2]) {
 			this.playerBody.applyImpulse(cp.v(0, -this.playerSpeed), cp.v(0, 0));
-		if (this.moving[3])
+			this.playerBody.setAngle(0);
+		}
+		if (this.moving[3]) {
 			this.playerBody.applyImpulse(cp.v(this.playerSpeed, 0), cp.v(0, 0));
+			this.playerBody.setAngle(Math.PI / 2.0);
+		}
+		
+		for (var i = 0; i < bgLayer.triggers.length; i++) {
+			var ti = bgLayer.triggers[i];
+			if (cc.rectContainsPoint(ti.rect, this.playerBody.p)) {
+				var newScene = null;
+				switch (ti.name) {
+					case "English": newScene = new ConversationScene(); break;
+					case "Spanish": newScene = new HelloWorldScene(); break;
+				}
+				
+				if (newScene != null) {
+					var trans = new cc.TransitionCrossFade(1, newScene, cc.color(0, 0, 0));
+					cc.director.pushScene(trans);
+				}
+			}
+		}
 	},
 	onKeyDown:function(e) {
 		switch (e) {
@@ -174,6 +222,7 @@ var OverworldScene = cc.Scene.extend({
 		this._super();
 		
 		phys = new cp.Space();
+		phys.collisionBias = Math.pow(1 - 0.4, 60); //handle 40% of overlap instead of 10% - can't escape map now.
 		
 		this.gameLayer = cc.Layer.create();
 		this.addChild(this.gameLayer);
@@ -188,4 +237,16 @@ var OverworldScene = cc.Scene.extend({
 	update:function (dt) {
 		
 	},
+	conversationWon:function() {
+		cc.log("CONVERSATION WON"); //TODO pipe these back into variables
+	},
+	conversationLost:function() {
+		cc.log("CONVERSATION LOST");
+	},
+	ddrWon:function() {
+		cc.log("DDR WON");
+	},
+	ddrLost:function() {
+		cc.log("DDR LOST");
+	}
 });
