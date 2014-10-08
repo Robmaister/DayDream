@@ -312,8 +312,9 @@ var HelloWorldLayer = cc.Layer.extend({
     update:function(){
         this.game_time +=1;
         if ( (this.game_time % 1500) == 0){
+			cc.audioEngine.stopMusic();
             this.prevScene.ddrWon();
-            cc.director.popScene();
+            cc.director.popToSceneStackLevel(2);
         }
     },
     handleKeys:function(key){

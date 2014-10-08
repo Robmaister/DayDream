@@ -176,5 +176,6 @@
  <objectgroup name="Triggers">
   <object name="English" x="540" y="1373.33" width="192.667" height="248"/>
   <object name="Spanish" x="1184.67" y="1389.33" width="303.333" height="311.333"/>
+  <object name="Endgame" x="1884.67" y="739.333" width="238.667" height="396"/>
  </objectgroup>
 </map>

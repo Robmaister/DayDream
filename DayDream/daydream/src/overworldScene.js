@@ -210,6 +210,7 @@ var OverworldMainLayer = cc.Layer.extend({
 				switch (ti.name) {
 					case "English": if (!this.wonConversation) newScene = new ConversationScene(this); break;
 					case "Spanish": if (!this.wonDDR) newScene = new HelloWorldScene(this); break;
+					case "Endgame": cc.director.popToRootScene(); break;
 				}
 				
 				if (newScene != null) {
