@@ -175,6 +175,7 @@ var OverworldMainLayer = cc.Layer.extend({
 				}
 				
 				if (newScene != null) {
+					newScene.prevScene = this.getParent();
 					var trans = new cc.TransitionCrossFade(1, newScene, cc.color(0, 0, 0));
 					cc.director.pushScene(trans);
 				}

@@ -25,7 +25,13 @@ var res = {
      map_overworld_png: "res/overworld/map.png",
 	 sprite_desk: "res/overworld/desk.png",
      sprite_student: "res/StudentSpriteStill.png",
-     teacher_dance: "res/TeacherDance.png"
+     teacher_dance: "res/TeacherDance.png",
+     salsa_bg: "res/salsa_background.png",
+     son_face: "res/AlistairStill.png",
+     wife_face:"res/CrawfordStill.png",
+     butler_face:"res/SamuelStill.png",
+     english_bg:"res/EnglishBackdrop.png"
+
 };
 
 var g_resources = [];

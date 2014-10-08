@@ -2,13 +2,15 @@
 var Base_icon = cc.Sprite.extend({
     ctor:function(spite_img, posx,posy){
         if (spite_img == 1){
-            this._super(res.w_button);
+            this._super(res.w_outline);
         }else if (spite_img == 2){
-            this._super(res.a_button);
+            this._super(res.a_outline);
         }else if (spite_img == 3){
-            this._super(res.s_button);
+            this._super(res.s_outline);
+        }else if (spite_img == 4){
+            this._super(res.d_outline);
         }else{
-            this._super(res.d_button);
+            this._super(res.salsa_bg);
         }
         this.setScale(.20);
         this.setAnchorPoint(0,0);
@@ -18,7 +20,7 @@ var Base_icon = cc.Sprite.extend({
 //individula objects for each of the icons
 var W_icon = cc.Sprite.extend({
     ctor:function(posx, posy){
-        this._super(res.w_outline);
+        this._super(res.w_button);
         this.setScale(.20);
         this.setAnchorPoint(0,0);
         this.setPosition(100,posy);
@@ -52,7 +54,7 @@ var W_icon = cc.Sprite.extend({
 });
 var A_icon = cc.Sprite.extend({
     ctor:function(posx,posy){
-        this._super(res.a_outline);
+        this._super(res.a_button);
         this.setScale(.20);
         this.setAnchorPoint(0,0);
         this.setPosition(200,posy);
@@ -86,7 +88,7 @@ var A_icon = cc.Sprite.extend({
 });
 var S_icon = cc.Sprite.extend({
     ctor:function(posx,posy){
-        this._super(res.s_outline);
+        this._super(res.s_button);
         this.setScale(.20);
         this.setAnchorPoint(0,0);
         this.setPosition(300,posy);
@@ -121,7 +123,7 @@ var S_icon = cc.Sprite.extend({
 }); 
 var D_icon = cc.Sprite.extend({
     ctor:function(posx,posy){
-        this._super(res.d_outline);
+        this._super(res.d_button);
         this.setScale(.20);
         this.setAnchorPoint(0,0);
         this.setPosition(400, posy);
@@ -218,6 +220,11 @@ var HelloWorldLayer = cc.Layer.extend({
         this.ddr_s_map = [];
         this.ddr_a_map = [];
         this.ddr_d_map = [];
+        //making background images
+        var bg = new cc.Sprite(res.salsa_bg);
+        bg.attr({x:600,y:0});
+        bg.setScale(1.5);
+        this.addChild(bg);
         //Pass the maps in and then add them as children
         this.tilemap = new DDRMAP(this.ddr_w_map,this.ddr_s_map,this.ddr_a_map,this.ddr_d_map);
         for (var l = 0; l < this.ddr_w_map.length ; l ++){
@@ -232,6 +239,7 @@ var HelloWorldLayer = cc.Layer.extend({
         for (var d_iter = 0; d_iter < this.ddr_d_map.length ; d_iter ++){
             this.addChild(this.ddr_d_map[d_iter]);
         }
+         
         //Making ht e base images to line up
         var temp = new Base_icon(1, 100,10);
         this.addChild(temp);
@@ -241,6 +249,7 @@ var HelloWorldLayer = cc.Layer.extend({
         this.addChild(temp);
         temp = new Base_icon(4, 400,10);
         this.addChild(temp);
+       
 
         //Createing/ animating the player dancing
         this.player_animation = cc.Animation.create();
@@ -325,10 +334,6 @@ var HelloWorldLayer = cc.Layer.extend({
 
 var HelloWorldScene = cc.Scene.extend({
 	prevScene: null,
-	ctor: function(prevScene) {
-		this._super();
-		this.prevScene = prevScene;
-	},
     onEnter:function () {
         this._super();
         var layer = new HelloWorldLayer(this.prevScene);
