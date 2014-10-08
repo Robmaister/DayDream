@@ -34,7 +34,8 @@ var res = {
      son_face: "res/AlistairStill.png",
      wife_face:"res/CrawfordStill.png",
      butler_face:"res/SamuelStill.png",
-     english_bg:"res/EnglishBackdrop.png"
+     english_bg:"res/EnglishBackdrop.png",
+     conrad_face:"res/ConradStill.png"
 
 };
 

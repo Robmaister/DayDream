@@ -151,7 +151,7 @@ var newtalk1 = cc.Layer.extend({
 			"Alistair: How could you accuse me of that?",
 			"Conrad: Because you killed him.",
 			"Alistair: You can't prove that \nI came in here and stabbed daddy.",
-			"AListair: No one was around, \nand I thought that I could blame mother.",
+			"Alistair: No one was around, \nand I thought that I could blame mother.",
 			"Alistair: Oh...can I take that back?",
 			"Mrs. Crawford: Never was a clever boy.",
 			"Alistair: Well you got me. I killed him, \nbut the money should be mine.",
@@ -175,6 +175,9 @@ var newtalk1 = cc.Layer.extend({
 		button.setTouchEnabled(true);
 		button.addTouchEventListener (this.touchEvent,this);
 		this.addChild(button);
+		var left_sprite = cc.Sprite.create(res.conrad_face);
+		left_sprite.setPosition(100,200);
+		this.addChild(left_sprite);
 		
 	},
 	Butler_info:function(sender,type){
@@ -192,7 +195,14 @@ var newtalk1 = cc.Layer.extend({
 				button.setPosition(400,100);
 				button.setTouchEnabled(true);
 				//icons of characters speaking
-				if (this.butler_info_counter== 1){
+				if (this.butler_info_counter ==0){
+					var left_sprite = cc.Sprite.create(res.conrad_face);
+					left_sprite.setPosition(100,200);
+					this.addChild(left_sprite);
+				}else if (this.butler_info_counter== 1){
+					var left_sprite = cc.Sprite.create(res.conrad_face);
+					left_sprite.setPosition(100,200);
+					this.addChild(left_sprite);
 					var right_sprite = cc.Sprite.create(res.butler_face);
 					right_sprite.setPosition(700,200);
 					this.addChild(right_sprite);
@@ -207,6 +217,9 @@ var newtalk1 = cc.Layer.extend({
 					var left_sprite = cc.Sprite.create(res.son_face);
 					left_sprite.setPosition(100,200);
 					this.addChild(left_sprite);
+					var right_sprite = cc.Sprite.create(res.conrad_face);
+					right_sprite.setPosition(700,200);
+					this.addChild(right_sprite);
 				}else if ( this.butler_info_counter == 6|| this.butler_info_counter == 7||this.butler_info_counter == 8||this.butler_info_counter == 9){
 					var left_sprite = cc.Sprite.create(res.son_face);
 					left_sprite.setPosition(100,200);
@@ -218,6 +231,10 @@ var newtalk1 = cc.Layer.extend({
 					var right_sprite = cc.Sprite.create(res.butler_face);
 					right_sprite.setPosition(700,200);
 					this.addChild(right_sprite);
+					var left_sprite = cc.Sprite.create(res.conrad_face);
+					left_sprite.setPosition(100,200);
+					this.addChild(left_sprite);
+
 				}
 				//Reached the end of talking now go back to starting point
 				if (this.butler_info_counter == 11){
@@ -256,10 +273,18 @@ var newtalk1 = cc.Layer.extend({
 				button.setTouchEnabled(true);
 
 				//placing the talking icons around textbox
-				if (this.wife_info_counter == 3|| this.wife_info_counter == 4|| this.wife_info_counter == 5){
+				if( this.wife_info_counter < 3){
+					var left_sprite = cc.Sprite.create(res.conrad_face);
+					left_sprite.setPosition(100,200);
+					this.addChild(left_sprite);
+				}
+				else if (this.wife_info_counter == 3|| this.wife_info_counter == 4|| this.wife_info_counter == 5){
 					var right_sprite = cc.Sprite.create(res.butler_face);
 					right_sprite.setPosition(700,200);
 					this.addChild(right_sprite);
+					var left_sprite = cc.Sprite.create(res.conrad_face);
+					left_sprite.setPosition(100,200);
+					this.addChild(left_sprite);
 				}else if (this.wife_info_counter == 6|| this.wife_info_counter == 7||this.wife_info_counter == 8 ){
 					var left_sprite = cc.Sprite.create(res.son_face);
 					left_sprite.setPosition(100,200);
@@ -278,6 +303,9 @@ var newtalk1 = cc.Layer.extend({
 					var left_sprite = cc.Sprite.create(res.wife_face);
 					left_sprite.setPosition(100,200);
 					this.addChild(left_sprite);
+					var right_sprite = cc.Sprite.create(res.conrad_face);
+					right_sprite.setPosition(700,200);
+					this.addChild(right_sprite);
 				}  
 				//reached the end on conversation 
 				if (this.wife_info_counter == 17){
@@ -313,10 +341,18 @@ var newtalk1 = cc.Layer.extend({
 				button.setTitleColor(255,255,255);
 				button.setPosition(400,100);
 				button.setTouchEnabled(true);
-				if (this.son_info_counter == 1){
+				if (this.son_info_counter == 0){
+					var left_sprite = cc.Sprite.create(res.conrad_face);
+					left_sprite.setPosition(100,200);
+					this.addChild(left_sprite);
+				}
+				else if (this.son_info_counter == 1){
 					var right_sprite = cc.Sprite.create(res.son_face);
 					right_sprite.setPosition(700,200);
 					this.addChild(right_sprite);
+					var left_sprite = cc.Sprite.create(res.conrad_face);
+					left_sprite.setPosition(100,200);
+					this.addChild(left_sprite);
 				}else if (this.son_info_counter == 14){
 					var left_sprite = cc.Sprite.create(res.wife_face);
 					left_sprite.setPosition(100,200);
@@ -328,6 +364,9 @@ var newtalk1 = cc.Layer.extend({
 					var left_sprite = cc.Sprite.create(res.son_face);
 					left_sprite.setPosition(100,200);
 					this.addChild(left_sprite);
+					var right_sprite = cc.Sprite.create(res.butler_face);
+					right_sprite.setPosition(700,200);
+					this.addChild(right_sprite);
 				}else{
 					var left_sprite = cc.Sprite.create(res.wife_face);
 					left_sprite.setPosition(100,200);
@@ -373,6 +412,9 @@ var newtalk1 = cc.Layer.extend({
 				button.setTouchEnabled(true);
 				//icon set up
 				if (this.butler_criminal_counter > 0){
+					var left_sprite = cc.Sprite.create(res.conrad_face);
+					left_sprite.setPosition(100,200);
+					this.addChild(left_sprite);
 					var sprite = cc.Sprite.create(res.butler_face);
 					sprite.setPosition(700,200);
 					this.addChild(sprite);
@@ -414,6 +456,9 @@ var newtalk1 = cc.Layer.extend({
 				button.setTouchEnabled(true);
 				//set up icons
 				if (this.mom_criminal_counter > 0){
+					var left_sprite = cc.Sprite.create(res.conrad_face);
+					left_sprite.setPosition(100,200);
+					this.addChild(left_sprite);
 					var sprite = cc.Sprite.create(res.wife_face);
 					sprite.setPosition(700,200);
 					this.addChild(sprite);
@@ -461,6 +506,9 @@ var newtalk1 = cc.Layer.extend({
 					var rightsprite = cc.Sprite.create(res.son_face);
 					rightsprite.setPosition(700,200);
 					this.addChild(rightsprite);
+					var left_sprite = cc.Sprite.create(res.conrad_face);
+					left_sprite.setPosition(100,200);
+					this.addChild(left_sprite);
 				}
 				if (this.son_criminal_counter == 12){
 					this.prevScene.conversationWon();
@@ -486,7 +534,11 @@ var newtalk1 = cc.Layer.extend({
 		switch (type) {
 			case ccui.Widget.TOUCH_BEGAN:
 				//if still in monlogue stay in it
+				var left_sprite = cc.Sprite.create(res.conrad_face);
+				left_sprite.setPosition(100,200);
+				this.addChild(left_sprite);
 				if (this.monologue_first_counter < 10){
+					
 					var button = new ccui.Button();
 				    button.loadTextures(res.speech_bubble);
 					button.setTitleText(this.monologue_first[this.monologue_first_counter]);
